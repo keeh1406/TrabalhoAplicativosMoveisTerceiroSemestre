@@ -16,12 +16,14 @@ public class Funcionario {
     private String enderecoFuncionario;
     private Long telefoneFuncionario;
     private Boolean flGerente;
+    private String sexoFuncionario;
+    private int id_Loja;
 
     public Funcionario() {
 
     }
 
-    public Funcionario(int idFuncionario, String nomeFuncionario, String emailFuncionario, String senhaFuncionario, Date nascimentoFuncionario, Long cpfFuncionario, String enderecoFuncionario, Long telefoneFuncionario, Boolean flGerente) {
+    public Funcionario(int idFuncionario, String nomeFuncionario, String emailFuncionario, String senhaFuncionario, Date nascimentoFuncionario, Long cpfFuncionario, String enderecoFuncionario, Long telefoneFuncionario, Boolean flGerente, String sexoFuncionario) {
         this.idFuncionario = idFuncionario;
         this.nomeFuncionario = nomeFuncionario;
         this.emailFuncionario = emailFuncionario;
@@ -31,6 +33,7 @@ public class Funcionario {
         this.enderecoFuncionario = enderecoFuncionario;
         this.telefoneFuncionario = telefoneFuncionario;
         this.flGerente = flGerente;
+        this.sexoFuncionario = sexoFuncionario;
     }
 
     public int getIdFuncionario() {
@@ -103,5 +106,21 @@ public class Funcionario {
 
     public void setFlGerente(Boolean flGerente) {
         this.flGerente = flGerente;
+    }
+
+    public String getSexoFuncionario() {
+        return sexoFuncionario;
+    }
+
+    public void setSexoFuncionario(String sexoFuncionario) {
+        this.sexoFuncionario = sexoFuncionario;
+    }
+
+    public long getId_Loja() {
+        return id_Loja;
+    }
+
+    public void setId_Loja(int id_Loja) {
+        this.id_Loja = id_Loja;
     }
 }

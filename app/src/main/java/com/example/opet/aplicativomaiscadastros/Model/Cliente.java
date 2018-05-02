@@ -15,12 +15,13 @@ public class Cliente {
     private Long cpfCliente;
     private String enderecoCliente;
     private Long telefoneCliente;
+    private String sexoCliente;
 
 
     public Cliente() {
     }
 
-    public Cliente(int idCliente, String nomeCliente, String emailCliente, String senhaCliente, Date nascimentoCliente, Long cpfCliente, String enderecoCliente, Long telefoneCliente) {
+    public Cliente(int idCliente, String nomeCliente, String emailCliente, String senhaCliente, Date nascimentoCliente, Long cpfCliente, String enderecoCliente, Long telefoneCliente, String sexoCliente) {
         this.idCliente = idCliente;
         this.nomeCliente = nomeCliente;
         this.emailCliente = emailCliente;
@@ -29,6 +30,7 @@ public class Cliente {
         this.cpfCliente = cpfCliente;
         this.enderecoCliente = enderecoCliente;
         this.telefoneCliente = telefoneCliente;
+        this.sexoCliente = sexoCliente;
     }
 
     public int getIdCliente() {
@@ -93,5 +95,13 @@ public class Cliente {
 
     public void setTelefoneCliente(Long telefoneCliente) {
         this.telefoneCliente = telefoneCliente;
+    }
+
+    public String getSexoCliente() {
+        return sexoCliente;
+    }
+
+    public void setSexoCliente(String sexoCliente) {
+        this.sexoCliente = sexoCliente;
     }
 }

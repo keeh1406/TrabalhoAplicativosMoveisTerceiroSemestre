@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AplicativoMaisCadastros.iml" filepath="$PROJECT_DIR$/AplicativoMaisCadastros.iml" />
+      <module fileurl="file://C:\Users\opet\Documents\GitHub\TrabalhoAplicativosMoveisTerceiroSemestre\AplicativoMaisCadastros.iml" filepath="C:\Users\opet\Documents\GitHub\TrabalhoAplicativosMoveisTerceiroSemestre\AplicativoMaisCadastros.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TrabalhoAplicativosMoveisTerceiroSemestre.iml" filepath="$PROJECT_DIR$/TrabalhoAplicativosMoveisTerceiroSemestre.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\opet\Documents\GitHub\TrabalhoAplicativosMoveisTerceiroSemestre\app\app.iml" filepath="C:\Users\opet\Documents\GitHub\TrabalhoAplicativosMoveisTerceiroSemestre\app\app.iml" />
     </modules>
   </component>
 </project>
