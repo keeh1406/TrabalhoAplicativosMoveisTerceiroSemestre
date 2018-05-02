@@ -12,7 +12,7 @@ public class Funcionario {
     private String emailFuncionario;
     private String senhaFuncionario;
     private Date nascimentoFuncionario;
-    private Long cpfFuncionario;
+    private Long CPFFuncionario;
     private String enderecoFuncionario;
     private Long telefoneFuncionario;
     private Boolean flGerente;
@@ -23,13 +23,13 @@ public class Funcionario {
 
     }
 
-    public Funcionario(int idFuncionario, String nomeFuncionario, String emailFuncionario, String senhaFuncionario, Date nascimentoFuncionario, Long cpfFuncionario, String enderecoFuncionario, Long telefoneFuncionario, Boolean flGerente, String sexoFuncionario) {
+    public Funcionario(int idFuncionario, String nomeFuncionario, String emailFuncionario, String senhaFuncionario, Date nascimentoFuncionario, Long CPFFuncionario, String enderecoFuncionario, Long telefoneFuncionario, Boolean flGerente, String sexoFuncionario) {
         this.idFuncionario = idFuncionario;
         this.nomeFuncionario = nomeFuncionario;
         this.emailFuncionario = emailFuncionario;
         this.senhaFuncionario = senhaFuncionario;
         this.nascimentoFuncionario = nascimentoFuncionario;
-        this.cpfFuncionario = cpfFuncionario;
+        this.CPFFuncionario = CPFFuncionario;
         this.enderecoFuncionario = enderecoFuncionario;
         this.telefoneFuncionario = telefoneFuncionario;
         this.flGerente = flGerente;
@@ -76,12 +76,12 @@ public class Funcionario {
         this.nascimentoFuncionario = nascimentoFuncionario;
     }
 
-    public Long getCpfFuncionario() {
-        return cpfFuncionario;
+    public Long getCPFFuncionario() {
+        return CPFFuncionario;
     }
 
-    public void setCpfFuncionario(Long cpfFuncionario) {
-        this.cpfFuncionario = cpfFuncionario;
+    public void setCPFFuncionario(Long CPFFuncionario) {
+        this.CPFFuncionario = CPFFuncionario;
     }
 
     public String getEnderecoFuncionario() {

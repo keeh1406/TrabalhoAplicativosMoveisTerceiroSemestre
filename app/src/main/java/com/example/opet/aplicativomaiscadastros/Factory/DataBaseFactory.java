@@ -24,8 +24,8 @@ public class DataBaseFactory extends SQLiteOpenHelper {
                 + BancoUtil.DESCRICAO_PRODUTO + " text,"
                 + BancoUtil.VALIDADE_PRODUTO + " text,"
                 + BancoUtil.PRODUTO_FORNECEDOR + " text,"
-                + BancoUtil.PRODUTO_SETOR + " text,"
-                + BancoUtil.PRODUTO_MARCA + " text)";
+                + " FOREIGN KEY (" + BancoUtil.PRODUTO_SETOR + ") REFERENCES " + BancoUtil.TABELA_SETOR + "(" + BancoUtil.ID_SETOR + "),"
+                + " FOREIGN KEY (" + BancoUtil.PRODUTO_MARCA + ") REFERENCES " + BancoUtil.TABELA_MARCA + "(" + BancoUtil.ID_MARCA + ")";
         db.execSQL(sql);
 
     }

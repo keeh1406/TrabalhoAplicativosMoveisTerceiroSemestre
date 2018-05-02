@@ -73,11 +73,11 @@ public class Cliente {
         this.nascimentoCliente = nascimentoCliente;
     }
 
-    public Long getCpfCliente() {
+    public Long getCPFCliente() {
         return CPFCliente;
     }
 
-    public void setCpfCliente(Long CPFCliente) {
+    public void setCPFCliente(Long CPFCliente) {
         this.CPFCliente = CPFCliente;
     }
 
