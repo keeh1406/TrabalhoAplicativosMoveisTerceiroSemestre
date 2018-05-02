@@ -12,7 +12,7 @@ public class Cliente {
     private String emailCliente;
     private String senhaCliente;
     private Date nascimentoCliente;
-    private Long cpfCliente;
+    private Long CPFCliente;
     private String enderecoCliente;
     private Long telefoneCliente;
     private String sexoCliente;
@@ -21,13 +21,13 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(int idCliente, String nomeCliente, String emailCliente, String senhaCliente, Date nascimentoCliente, Long cpfCliente, String enderecoCliente, Long telefoneCliente, String sexoCliente) {
+    public Cliente(int idCliente, String nomeCliente, String emailCliente, String senhaCliente, Date nascimentoCliente, Long CPFCliente, String enderecoCliente, Long telefoneCliente, String sexoCliente) {
         this.idCliente = idCliente;
         this.nomeCliente = nomeCliente;
         this.emailCliente = emailCliente;
         this.senhaCliente = senhaCliente;
         this.nascimentoCliente = nascimentoCliente;
-        this.cpfCliente = cpfCliente;
+        this.CPFCliente = CPFCliente;
         this.enderecoCliente = enderecoCliente;
         this.telefoneCliente = telefoneCliente;
         this.sexoCliente = sexoCliente;
@@ -74,11 +74,11 @@ public class Cliente {
     }
 
     public Long getCpfCliente() {
-        return cpfCliente;
+        return CPFCliente;
     }
 
-    public void setCpfCliente(Long cpfCliente) {
-        this.cpfCliente = cpfCliente;
+    public void setCpfCliente(Long CPFCliente) {
+        this.CPFCliente = CPFCliente;
     }
 
     public String getEnderecoCliente() {
