@@ -1,0 +1,53 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editNomeCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Cliente"/>
+    <EditText
+        android:id="@+id/editEmailCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-mail do Cliente"/>
+    <EditText
+        android:id="@+id/editSenhaCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha do Cliente"/>
+    <EditText
+        android:id="@+id/editNascimentoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nascimento do Cliente"/>
+    <EditText
+        android:id="@+id/editCPFCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPF do Cliente"/>
+    <EditText
+    android:id="@+id/editEnderecoCliente"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Endereço do Cliente"/>
+    <EditText
+        android:id="@+id/editTelefoneCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telefone do Cliente"/>
+    <Spinner
+        android:id="@+id/SpinnerSexoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/array_sexo"/>
+    <Button
+        android:onClick="salvarCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Salvar"/>
+
+</LinearLayout>

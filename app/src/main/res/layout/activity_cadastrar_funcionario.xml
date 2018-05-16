@@ -1,0 +1,58 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editNomeFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Funcionario"/>
+    <EditText
+        android:id="@+id/editEmailFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-mail do Funcionario"/>
+    <EditText
+        android:id="@+id/editSenhaFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha do Funcionario"/>
+    <EditText
+        android:id="@+id/editNascimentoFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nascimento do Funcionario"/>
+    <EditText
+        android:id="@+id/editCPFFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPF do Funcionario"/>
+    <EditText
+        android:id="@+id/editEnderecoFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Endereço do Funcionario"/>
+    <EditText
+        android:id="@+id/editTelefoneFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telefone do Funcionario"/>
+    <Spinner
+        android:id="@+id/SpinnerSexoFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/array_sexo"/>
+    <CheckBox
+        android:id="@+id/checkboxflGerenteFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/array_sexo"/>
+    <Button
+        android:onClick="salvarFuncionario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Salvar"/>
+
+</LinearLayout>
