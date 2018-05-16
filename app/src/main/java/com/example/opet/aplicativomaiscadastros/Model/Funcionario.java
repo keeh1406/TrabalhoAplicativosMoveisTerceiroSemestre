@@ -15,7 +15,7 @@ public class Funcionario {
     private Long CPFFuncionario;
     private String enderecoFuncionario;
     private Long telefoneFuncionario;
-    private Boolean flGerente;
+    private String flGerente;
     private String sexoFuncionario;
     private int id_Loja;
 
@@ -23,7 +23,7 @@ public class Funcionario {
 
     }
 
-    public Funcionario(int idFuncionario, String nomeFuncionario, String emailFuncionario, String senhaFuncionario, Date nascimentoFuncionario, Long CPFFuncionario, String enderecoFuncionario, Long telefoneFuncionario, Boolean flGerente, String sexoFuncionario) {
+    public Funcionario(int idFuncionario, String nomeFuncionario, String emailFuncionario, String senhaFuncionario, Date nascimentoFuncionario, Long CPFFuncionario, String enderecoFuncionario, Long telefoneFuncionario, String flGerente, String sexoFuncionario) {
         this.idFuncionario = idFuncionario;
         this.nomeFuncionario = nomeFuncionario;
         this.emailFuncionario = emailFuncionario;
@@ -100,11 +100,11 @@ public class Funcionario {
         this.telefoneFuncionario = telefoneFuncionario;
     }
 
-    public Boolean getFlGerente() {
+    public String getFlGerente() {
         return flGerente;
     }
 
-    public void setFlGerente(Boolean flGerente) {
+    public void setFlGerente(String flGerente) {
         this.flGerente = flGerente;
     }
 

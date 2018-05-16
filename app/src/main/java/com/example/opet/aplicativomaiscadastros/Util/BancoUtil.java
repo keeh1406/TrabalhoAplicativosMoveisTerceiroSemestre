@@ -27,6 +27,7 @@ public class BancoUtil {
     public static final String NASCIMENTO_CLIENTE = "nascimentoCliente";
     public static final String ENDERECO_CLIENTE = "enderecoCliente";
     public static final String EMAIL_CLIENTE = "emailCliente";
+    public static final String SENHA_CLIENTE = "senhaCliente";
     public static final String TELEFONE_CLIENTE = "telefoneCliente";
     public static final String SEXO_CLIENTE = "sexoCliente";
 
@@ -37,9 +38,12 @@ public class BancoUtil {
     public static final String NASCIMENTO_FUNCIONARIO = "nascimentoFuncionario";
     public static final String ENDERECO_FUNCIONARIO = "enderecoFuncionario";
     public static final String EMAIL_FUNCIONARIO = "emailFuncionario";
+    public static final String SENHA_FUNCIONARIO = "senhaFuncionario";
     public static final String TELEFONE_FUNCIONARIO = "telefoneFuncionario";
     public static final String SEXO_FUNCIONARIO = "sexoFuncionario";
     public static final String FL_GERENTE = "flGerente";
+    public static final String FUNCIONARIO_LOJA = "id_Loja";
+
 
     public static final String TABELA_MARCA = "marca";
     public static final String ID_MARCA = "idMarca";
