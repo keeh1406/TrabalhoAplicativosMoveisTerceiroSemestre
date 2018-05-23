@@ -13,11 +13,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textDescricaoFuncionario"
+        android:id="@+id/textEmailFuncionario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textValidadeFuncionario"
+        android:id="@+id/textSenhaFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textNascimentoFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textCPFFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textEnderecoFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textTelefoneFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textFlGerenteFuncionario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textIdLojaFuncionario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

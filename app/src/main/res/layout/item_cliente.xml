@@ -13,19 +13,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textDescricaoCliente"
+        android:id="@+id/textEmailCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textValidadeCliente"
+        android:id="@+id/textSenhaCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textSetorCliente"
+        android:id="@+id/textNascimentoCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textMarcaCliente"
+        android:id="@+id/textCPFCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textEnderecoCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textTelefoneCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textSexoCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

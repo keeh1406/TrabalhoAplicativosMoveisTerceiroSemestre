@@ -13,11 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textDescricaoLoja"
+        android:id="@+id/textEmailLoja"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textValidadeLoja"
+        android:id="@+id/textCNPJLoja"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textEnderecoLoja"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textTelefoneLoja"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

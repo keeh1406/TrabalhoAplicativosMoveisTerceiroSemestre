@@ -19,17 +19,17 @@
         android:layout_height="wrap_content"
         android:hint="Validade do Produto"/>
     <Spinner
-        android:id="@+id/editSpinnerSetorProduto"
+        android:id="@+id/spinnerSetorProduto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Setor do Produto"/>
     <Spinner
-        android:id="@+id/editSpinnerMarcaProduto"
+        android:id="@+id/spinnerMarcaProduto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Marca do Produto"/>
     <Spinner
-        android:id="@+id/editSpinnerFornecedorProduto"
+        android:id="@+id/spinnerFornecedorProduto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Fornecedor do Produto"/>

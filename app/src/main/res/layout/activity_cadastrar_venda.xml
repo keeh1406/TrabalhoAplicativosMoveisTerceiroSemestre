@@ -33,17 +33,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Data da Venda"/>
-    <EditText
-        android:id="@+id/editNotaFiscalVenda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nota Fiscal da Venda"/>
     <Spinner
-        android:id="@+id/SpinnerIdProdutoVenda"
+        android:id="@+id/spinnerIdProdutoVenda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Spinner
-        android:id="@+id/SpinnerIdClienteVenda"
+        android:id="@+id/spinnerIdClienteVenda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <Button

@@ -47,9 +47,9 @@ public class FuncionarioAdapter extends ArrayAdapter{
         TextView textCPFFuncionario = (TextView) mView.findViewById(R.id.textCPFFuncionario);
         TextView textEnderecoFuncionario = (TextView) mView.findViewById(R.id.textEnderecoFuncionario);
         TextView textTelefoneFuncionario = (TextView) mView.findViewById(R.id.textTelefoneFuncionario);
-        TextView textSexoFuncionario = (TextView) mView.findViewById(R.id.textSexoFuncionario);
-        TextView textFlGerente = (TextView) mView.findViewById(R.id.textFlGerente);
-        TextView textId_Loja = (TextView) mView.findViewById(R.id.textId_Loja);
+        TextView textSexoFuncionario = (TextView) mView.findViewById(R.id.SpinnerSexoFuncionario);
+        TextView textFlGerenteFuncionario = (TextView) mView.findViewById(R.id.textFlGerenteFuncionario);
+        TextView textIdLojaFuncionario = (TextView) mView.findViewById(R.id.textIdLojaFuncionario);
 
         if(textIdFuncionario != null){
             textIdFuncionario.setText(String.valueOf(funcionario.getIdFuncionario()));
@@ -78,11 +78,11 @@ public class FuncionarioAdapter extends ArrayAdapter{
         if(textSexoFuncionario != null){
             textSexoFuncionario.setText(String.valueOf(funcionario.getSexoFuncionario()));
         }
-        if(textFlGerente != null){
-            textFlGerente.setText(String.valueOf(funcionario.getFlGerente()));
+        if(textFlGerenteFuncionario != null){
+            textFlGerenteFuncionario.setText(String.valueOf(funcionario.getFlGerente()));
         }
-        if(textId_Loja != null){
-            textId_Loja.setText(String.valueOf(funcionario.getId_Loja()));
+        if(textIdLojaFuncionario != null){
+            textIdLojaFuncionario.setText(String.valueOf(funcionario.getId_Loja()));
         }
         return mView;
     }

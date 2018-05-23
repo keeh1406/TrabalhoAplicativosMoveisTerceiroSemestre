@@ -9,6 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
+        android:id="@+id/textCNPJFornecedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textTelefoneFornecedor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
         android:id="@+id/textNomeFornecedor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

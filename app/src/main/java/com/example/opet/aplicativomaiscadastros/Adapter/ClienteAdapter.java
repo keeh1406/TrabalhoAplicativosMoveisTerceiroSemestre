@@ -48,7 +48,7 @@ public class ClienteAdapter extends ArrayAdapter {
         TextView textCPFCliente = (TextView) mView.findViewById(R.id.textCPFCliente);
         TextView textEnderecoCliente = (TextView) mView.findViewById(R.id.textEnderecoCliente);
         TextView textTelefoneCliente = (TextView) mView.findViewById(R.id.textTelefoneCliente);
-        TextView textSexoCliente = (TextView) mView.findViewById(R.id.textSexoCliente);
+        TextView textSexoCliente = (TextView) mView.findViewById(R.id.text);
 
         if(textIdCliente != null){
             textIdCliente.setText(String.valueOf(cliente.getIdCliente()));
