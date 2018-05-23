@@ -24,11 +24,13 @@ import java.text.SimpleDateFormat;
 
 public class ActivityCadastrarCliente extends Activity {
     private EditText editNomeCliente;
-    private EditText editDescricaoCliente;
-    private EditText editValidadeCliente;
-    private Spinner editSetorCliente;
-    private Spinner editMarcaCliente;
-    private Spinner editFornecedorCliente;
+    private EditText editEmailCliente;
+    private EditText editSenhaCliente;
+    private EditText editNascimentoCliente;
+    private EditText editCPFCliente;
+    private EditText editEnderecoCliente;
+    private EditText editTelefoneCliente;
+    private Spinner SpinnerSexoCliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,23 +38,27 @@ public class ActivityCadastrarCliente extends Activity {
         setContentView(R.layout.activity_cadastrar_cliente);
 
         editNomeCliente = (EditText) findViewById(R.id.editNomeCliente);
-        editDescricaoCliente = (EditText) findViewById(R.id.editDescricaoCliente);
-        editValidadeCliente = (EditText) findViewById(R.id.editValidadeCliente);
-        editSetorCliente = (Spinner) findViewById(R.id.editSpinnerSetorCliente);
-        editMarcaCliente = (Spinner) findViewById(R.id.editSpinnerMarcaCliente);
-        editFornecedorCliente = (Spinner) findViewById(R.id.editSpinnerFornecedorCliente);
+        editEmailCliente = (EditText) findViewById(R.id.editEmailCliente);
+        editSenhaCliente = (EditText) findViewById(R.id.editSenhaCliente);
+        editNascimentoCliente = (EditText) findViewById(R.id.editNascimentoCliente);
+        editCPFCliente = (EditText) findViewById(R.id.editCPFCliente);
+        editEnderecoCliente = (EditText) findViewById(R.id.editEnderecoCliente);
+        editTelefoneCliente = (EditText) findViewById(R.id.editTelefoneCliente);
+        SpinnerSexoCliente = (Spinner) findViewById(R.id.SpinnerSexoCliente);
     }
 
     public void salvarCliente(View v) throws ParseException {
         ClienteDAO clienteDAO = new ClienteDAO(this);
         Cliente cliente = new Cliente();
         cliente.setNomeCliente(editNomeCliente.getText().toString());
-        cliente.setDescricaoCliente(editDescricaoCliente.getText().toString());
+        cliente.setEmailCliente(editEmailCliente.getText().toString());
+        cliente.setSenhaCliente(editSenhaCliente.getText().toString());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        cliente.setDataValidadeCliente(simpleDateFormat.parse(editValidadeCliente.getText().toString()));
-        cliente.setId_Setor(editSetorCliente.getText().toString());
-        cliente.setId_Marca(editMarcaCliente.getText().toString());
-        cliente.setId_Fornecedor(editFornecedorCliente.getText().toString());
+        cliente.setNascimentoCliente(simpleDateFormat.parse(editNascimentoCliente.getText().toString()));
+        cliente.setCPFCliente(Long.parseLong(editCPFCliente.getText().toString()));
+        cliente.setEnderecoCliente(editEnderecoCliente.getText().toString());
+        cliente.setEnderecoCliente(editTelefoneCliente.getText().toString());
+        cliente.setSexoCliente((SpinnerSexoCliente.toString()));
 
         long resultado = clienteDAO.insereDado(cliente);
 
