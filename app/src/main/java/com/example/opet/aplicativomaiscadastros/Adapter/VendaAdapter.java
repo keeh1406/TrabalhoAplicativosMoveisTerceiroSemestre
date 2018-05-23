@@ -40,12 +40,14 @@ public class VendaAdapter extends ArrayAdapter {
         Venda venda = vendas.get(position);
 
         TextView textIdVenda = (TextView) mView.findViewById(R.id.textIdVenda);
-        TextView textQuantidadeProduto = (TextView) mView.findViewById(R.id.textQuantidadeProduto);
+        TextView textQuantidadeProduto = (TextView) mView.findViewById(R.id.textQuantidadeProdutoVenda);
         TextView textDescricaoVenda = (TextView) mView.findViewById(R.id.textDescricaoVenda);
+        TextView textValorTotalVenda = (TextView) mView.findViewById(R.id.textValorTotalVenda);
+        TextView textValorUnitarioVenda = (TextView) mView.findViewById(R.id.textValorUnitarioVenda);
+        TextView textFormaPagamentoVenda = (TextView) mView.findViewById(R.id.textFormaPagamentoVenda);
         TextView textDataVenda = (TextView) mView.findViewById(R.id.textDataVenda);
-        TextView textValorVenda = (TextView) mView.findViewById(R.id.textValorVenda);
-        TextView textId_Produto = (TextView) mView.findViewById(R.id.textId_Produto);
-        TextView textId_Cliente = (TextView) mView.findViewById(R.id.textId_Cliente);
+        TextView textIdProdutoVenda = (TextView) mView.findViewById(R.id.textIdProdutoVenda);
+        TextView textIdClienteVenda = (TextView) mView.findViewById(R.id.textIdClienteVenda);
 
         if(textIdVenda != null){
             textIdVenda.setText(String.valueOf(venda.getIdVenda()));
@@ -59,14 +61,20 @@ public class VendaAdapter extends ArrayAdapter {
         if(textDataVenda != null){
             textDataVenda.setText(String.valueOf(venda.getDataVenda()));
         }
-        if(textValorVenda != null){
-            textValorVenda.setText(String.valueOf(venda.getValorVenda()));
+        if(textValorTotalVenda != null){
+            textValorTotalVenda.setText(String.valueOf(venda.getValorTotalVenda()));
         }
-        if(textId_Produto != null){
-            textId_Produto.setText(String.valueOf(venda.getId_Produto()));
+        if(textValorUnitarioVenda != null){
+            textValorUnitarioVenda.setText(String.valueOf(venda.getValorUnitarioVenda()));
         }
-        if(textId_Cliente != null){
-            textId_Cliente.setText(String.valueOf(venda.getId_Cliente()));
+        if(textFormaPagamentoVenda != null){
+            textFormaPagamentoVenda.setText(String.valueOf(venda.getFormaPagamentoVenda()));
+        }
+        if(textIdProdutoVenda != null){
+            textIdProdutoVenda.setText(String.valueOf(venda.getIdProdutoVenda()));
+        }
+        if(textIdClienteVenda != null){
+            textIdClienteVenda.setText(String.valueOf(venda.getIdClienteVenda()));
         }
         return mView;
     }

@@ -66,7 +66,9 @@ public class BancoUtil {
     public static final String ID_VENDA = "idVenda";
     public static final String QUANTIDADE_PRODUTO = "quantidadeProduto";
     public static final String DESCRICAO_VENDA = "descricaoVenda";
-    public static final String VALOR_VENDA = "valorVenda";
+    public static final String VALOR_TOTAL_VENDA = "valorTotalVenda";
+    public static final String VALOR_UNITARIO_VENDA = "valorUnitarioVenda";
+    public static final String FORMA_PAGAMENTO_VENDA = "formaPagamentoVenda";
     public static final String DATA_VENDA = "dataVenda";
     public static final String VENDA_PRODUTO = "id_Produto";
     public static final String VENDA_CLIENTE = "id_Cliente";

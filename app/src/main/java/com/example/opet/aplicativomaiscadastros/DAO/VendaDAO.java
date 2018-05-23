@@ -38,10 +38,12 @@ public class VendaDAO {
         valores = new ContentValues();
         valores.put(BancoUtil.QUANTIDADE_PRODUTO, venda.getQuantidadeProduto());
         valores.put(BancoUtil.DESCRICAO_VENDA, venda.getDescricaoVenda());
-        valores.put(BancoUtil.VALOR_VENDA, venda.getValorVenda());
+        valores.put(BancoUtil.VALOR_TOTAL_VENDA, venda.getValorTotalVenda());
+        valores.put(BancoUtil.VALOR_UNITARIO_VENDA, venda.getValorUnitarioVenda());
+        valores.put(BancoUtil.FORMA_PAGAMENTO_VENDA, venda.getFormaPagamentoVenda());
         valores.put(BancoUtil.DATA_VENDA, String.valueOf(venda.getDataVenda()));
-        valores.put(BancoUtil.VENDA_CLIENTE, venda.getId_Cliente());
-        valores.put(BancoUtil.VENDA_PRODUTO, venda.getId_Produto());
+        valores.put(BancoUtil.VENDA_CLIENTE, venda.getIdClienteVenda());
+        valores.put(BancoUtil.VENDA_PRODUTO, venda.getIdProdutoVenda());
 
         resultado = db.insert(BancoUtil.TABELA_VENDA, null, valores);
         db.close();
@@ -53,7 +55,7 @@ public class VendaDAO {
     public Venda carregaVendaPorID(long id) throws ParseException {
         Cursor cursor;
         String[] campos = {BancoUtil.ID_VENDA, BancoUtil.QUANTIDADE_PRODUTO, BancoUtil.DESCRICAO_VENDA,
-                BancoUtil.DATA_VENDA, BancoUtil.VALOR_VENDA, BancoUtil.VENDA_PRODUTO, BancoUtil.VENDA_CLIENTE};
+                BancoUtil.DATA_VENDA, BancoUtil.VALOR_TOTAL_VENDA, BancoUtil.VALOR_UNITARIO_VENDA, BancoUtil.FORMA_PAGAMENTO_VENDA, BancoUtil.VENDA_PRODUTO, BancoUtil.VENDA_CLIENTE};
         db = banco.getReadableDatabase();
 
         String where = BancoUtil.ID_VENDA + " = " + id;
@@ -69,7 +71,9 @@ public class VendaDAO {
             int quantidadeVenda = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.QUANTIDADE_PRODUTO));
             String descricaoVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.DESCRICAO_VENDA));
             String validadeVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.DATA_VENDA));
-            long valorVenda = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.VALOR_VENDA));
+            long valorTotalVenda = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.VALOR_TOTAL_VENDA));
+            long valorUnitarioVenda = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.VALOR_UNITARIO_VENDA));
+            String formaPagamentoVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.FORMA_PAGAMENTO_VENDA));
             int produtoVenda = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.VENDA_PRODUTO));
             int clienteVenda = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.VENDA_CLIENTE));
 
@@ -77,9 +81,11 @@ public class VendaDAO {
             venda.setQuantidadeProduto(quantidadeVenda);
             venda.setDescricaoVenda(descricaoVenda);
             venda.setDataVenda(Util.toDate(validadeVenda));
-            venda.setValorVenda(valorVenda);
-            venda.setId_Cliente(clienteVenda);
-            venda.setId_Produto(produtoVenda);
+            venda.setValorTotalVenda(valorTotalVenda);
+            venda.setValorUnitarioVenda(valorUnitarioVenda);
+            venda.setFormaPagamentoVenda(formaPagamentoVenda);
+            venda.setIdClienteVenda(clienteVenda);
+            venda.setIdProdutoVenda(produtoVenda);
 
         }
         db.close();
@@ -89,7 +95,7 @@ public class VendaDAO {
     public Cursor carregaDados() {
         Cursor cursor;
         String[] campos = {BancoUtil.ID_VENDA, BancoUtil.QUANTIDADE_PRODUTO, BancoUtil.DESCRICAO_VENDA,
-                BancoUtil.DATA_VENDA, BancoUtil.VALOR_VENDA, BancoUtil.VENDA_PRODUTO, BancoUtil.VENDA_CLIENTE};
+                BancoUtil.DATA_VENDA, BancoUtil.VALOR_TOTAL_VENDA, BancoUtil.VALOR_UNITARIO_VENDA, BancoUtil.FORMA_PAGAMENTO_VENDA, BancoUtil.VENDA_PRODUTO, BancoUtil.VENDA_CLIENTE};
         db = banco.getReadableDatabase();
 
         String where = null;
@@ -117,7 +123,9 @@ public class VendaDAO {
                     int quantidadeProduto = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.QUANTIDADE_PRODUTO));
                     String descricaoVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.DESCRICAO_VENDA));
                     String validadeVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.DATA_VENDA));
-                    long valorVenda = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.VALOR_VENDA));
+                    long valorTotalVenda = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.VALOR_TOTAL_VENDA));
+                    long valorUnitarioVenda = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.VALOR_UNITARIO_VENDA));
+                    String formaPagamentoVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.FORMA_PAGAMENTO_VENDA));
                     int produtoVenda = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.VENDA_PRODUTO));
                     int clienteVenda = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.VENDA_CLIENTE));
 
@@ -125,9 +133,11 @@ public class VendaDAO {
                     venda.setQuantidadeProduto(quantidadeProduto);
                     venda.setDescricaoVenda(descricaoVenda);
                     venda.setDataVenda(Util.toDate(validadeVenda));
-                    venda.setValorVenda(valorVenda);
-                    venda.setId_Cliente(clienteVenda);
-                    venda.setId_Produto(produtoVenda);
+                    venda.setValorTotalVenda(valorTotalVenda);
+                    venda.setValorUnitarioVenda(valorUnitarioVenda);
+                    venda.setFormaPagamentoVenda(formaPagamentoVenda);
+                    venda.setIdClienteVenda(clienteVenda);
+                    venda.setIdProdutoVenda(produtoVenda);
 
                     vendas.add(venda);
                 } while (cursor.moveToNext());
@@ -160,16 +170,19 @@ public class VendaDAO {
         where = BancoUtil.DESCRICAO_VENDA + " = " + venda.getDescricaoVenda();
         where = BancoUtil.DATA_VENDA + " = " + venda.getDataVenda();
         where = BancoUtil.VENDA_CLIENTE + " = " + venda.getIdVenda();
-        where = BancoUtil.VALOR_VENDA+ " = " + venda.getValorVenda();
-        where = BancoUtil.VENDA_PRODUTO + " = " + venda.getId_Produto();
+        where = BancoUtil.VALOR_TOTAL_VENDA+ " = " + venda.getValorTotalVenda();
+        where = BancoUtil.VALOR_UNITARIO_VENDA+ " = " + venda.getValorUnitarioVenda();
+        where = BancoUtil.VENDA_PRODUTO + " = " + venda.getIdProdutoVenda();
 
         valores = new ContentValues();
         valores.put(BancoUtil.QUANTIDADE_PRODUTO, venda.getQuantidadeProduto());
         valores.put(BancoUtil.DESCRICAO_VENDA, venda.getDescricaoVenda());
-        valores.put(BancoUtil.VALOR_VENDA, venda.getValorVenda());
+        valores.put(BancoUtil.VALOR_TOTAL_VENDA, venda.getValorTotalVenda());
+        valores.put(BancoUtil.VALOR_UNITARIO_VENDA, venda.getValorUnitarioVenda());
+        valores.put(BancoUtil.FORMA_PAGAMENTO_VENDA, venda.getFormaPagamentoVenda());
         valores.put(BancoUtil.DATA_VENDA, String.valueOf(venda.getDataVenda()));
-        valores.put(BancoUtil.VENDA_CLIENTE, venda.getId_Cliente());
-        valores.put(BancoUtil.VENDA_PRODUTO, venda.getId_Produto());
+        valores.put(BancoUtil.VENDA_CLIENTE, venda.getIdClienteVenda());
+        valores.put(BancoUtil.VENDA_PRODUTO, venda.getIdProdutoVenda());
 
 
         int resultado = db.update(BancoUtil.TABELA_VENDA, valores, where, null);

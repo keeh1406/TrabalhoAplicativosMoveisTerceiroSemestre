@@ -1,6 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/editDescricaoVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descrição da Venda"/>
+    <EditText
+        android:id="@+id/editQuantidadeProdutoVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantidade de Produtos Vendidos"/>
+    <EditText
+        android:id="@+id/editValorTotalVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor Total da Venda"/>
+    <EditText
+        android:id="@+id/editValorUnitarioVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor Unitario da Venda"/>
+    <EditText
+        android:id="@+id/editFormaPagamentoVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Forma de Pagamento da Venda"/>
+    <EditText
+        android:id="@+id/editDataVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data da Venda"/>
+    <EditText
+        android:id="@+id/editNotaFiscalVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nota Fiscal da Venda"/>
+    <Spinner
+        android:id="@+id/SpinnerIdProdutoVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Spinner
+        android:id="@+id/SpinnerIdClienteVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:onClick="salvarVenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Salvar"/>
+
+</LinearLayout>

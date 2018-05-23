@@ -9,15 +9,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textNomeVenda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
         android:id="@+id/textDescricaoVenda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
-        android:id="@+id/textValidadeVenda"
+        android:id="@+id/textQuantidadeProdutoVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textValorTotalVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textValorUnitarioVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textFormaPagamentoVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textDataVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textNotaFiscalVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textIdProdutoVenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textIdClienteVenda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

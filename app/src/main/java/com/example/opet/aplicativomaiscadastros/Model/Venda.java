@@ -10,19 +10,23 @@ public class Venda {
     private int idVenda;
     private int quantidadeProduto;
     private String descricaoVenda;
-    private Long valorVenda;
+    private Long valorTotalVenda;
+    private long valorUnitarioVenda;
+    private String formaPagamentoVenda;
     private Date dataVenda;
-    private int id_Produto;
-    private int id_Cliente;
+    private int idProdutoVenda;
+    private int idClienteVenda;
 
     public Venda() {
     }
 
-    public Venda(int idVenda, int quantidadeProduto, String descricaoVenda, Long valorVenda, Date dataVenda) {
+    public Venda(int idVenda, int quantidadeProduto, String descricaoVenda, Long valorTotalVenda, Long valorUnitarioVenda, Date dataVenda, String formaPagamentoVenda) {
         this.idVenda = idVenda;
         this.quantidadeProduto = quantidadeProduto;
         this.descricaoVenda = descricaoVenda;
-        this.valorVenda = valorVenda;
+        this.valorTotalVenda = valorTotalVenda;
+        this.valorUnitarioVenda = valorUnitarioVenda;
+        this.formaPagamentoVenda = formaPagamentoVenda;
         this.dataVenda = dataVenda;
     }
 
@@ -50,13 +54,25 @@ public class Venda {
         this.descricaoVenda = descricaoVenda;
     }
 
-    public Long getValorVenda() {
-        return valorVenda;
+    public Long getValorTotalVenda() {
+        return valorTotalVenda;
     }
 
-    public void setValorVenda(Long valorVenda) {
-        this.valorVenda = valorVenda;
+    public void setValorTotalVenda(Long valorTotalVenda) {
+        this.valorTotalVenda = valorTotalVenda;
     }
+
+    public Long getValorUnitarioVenda() {
+        return valorUnitarioVenda;
+    }
+
+    public void setValorUnitarioVenda(Long valorUnitarioVenda) { this.valorUnitarioVenda = valorUnitarioVenda;}
+
+    public String getFormaPagamentoVenda() {
+        return formaPagamentoVenda;
+    }
+
+    public void setFormaPagamentoVenda(String formaPagamentoVenda) { this.formaPagamentoVenda = formaPagamentoVenda;}
 
     public Date getDataVenda() {
         return dataVenda;
@@ -66,19 +82,19 @@ public class Venda {
         this.dataVenda = dataVenda;
     }
 
-    public int getId_Produto() {
-        return id_Produto;
+    public int getIdProdutoVenda() {
+        return idProdutoVenda;
     }
 
-    public void setId_Produto(int id_Produto) {
-        this.id_Produto = id_Produto;
+    public void setIdProdutoVenda(int idProdutoVenda) {
+        this.idProdutoVenda = idProdutoVenda;
     }
 
-    public int getId_Cliente() {
-        return id_Cliente;
+    public int getIdClienteVenda() {
+        return idClienteVenda;
     }
 
-    public void setId_Cliente(int id_Cliente) {
-        this.id_Cliente = id_Cliente;
+    public void setIdClienteVenda(int idClienteVenda) {
+        this.idClienteVenda = idClienteVenda;
     }
 }

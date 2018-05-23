@@ -86,7 +86,9 @@ public class DataBaseFactory extends SQLiteOpenHelper {
                 + BancoUtil.ID_VENDA + " integer primary key autoincrement,"
                 + BancoUtil.DESCRICAO_VENDA + " text,"
                 + BancoUtil.QUANTIDADE_PRODUTO + " text,"
-                + BancoUtil.VALOR_VENDA + " text,"
+                + BancoUtil.VALOR_TOTAL_VENDA + " text,"
+                + BancoUtil.VALOR_UNITARIO_VENDA + " text,"
+                + BancoUtil.FORMA_PAGAMENTO_VENDA + " text,"
                 + BancoUtil.DATA_VENDA + " text,"
                 + " FOREIGN KEY (" + BancoUtil.VENDA_CLIENTE + ") REFERENCES " + BancoUtil.TABELA_CLIENTE + "(" + BancoUtil.ID_CLIENTE + "),"
                 + " FOREIGN KEY (" + BancoUtil.VENDA_PRODUTO + ") REFERENCES " + BancoUtil.TABELA_PRODUTO + "(" + BancoUtil.ID_PRODUTO + ")";
