@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/editNomeProdutoUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Produto"/>
+    <EditText
+        android:id="@+id/editDescricaoProdutoUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descrição do Produto"/>
+    <EditText
+        android:id="@+id/editValidadeProdutoUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Validade do Produto"/>
+    <EditText
+        android:id="@+id/editSetorProdutoUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Setor do Produto"/>
+    <EditText
+        android:id="@+id/editMarcaProdutoUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Marca do Produto"/>
+    <EditText
+        android:id="@+id/editFornecedorProdutoUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fornecedor do Produto"/>
+    <Button
+        android:onClick="removerProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Remover"/>
+
+</LinearLayout>

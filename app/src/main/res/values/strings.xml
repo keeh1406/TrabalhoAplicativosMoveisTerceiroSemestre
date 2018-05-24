@@ -5,4 +5,7 @@
         <item>Feminino</item>
         <item>Masculino</item>
     </string-array>
+
+    <string name="dialog_title">remover item</string>
+    <string name="dialog_message">Tem certeza que deseja remover o item?</string>
 </resources>
