@@ -1,6 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/editNomeFuncionarioUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Funcionario"/>
+    <EditText
+        android:id="@+id/editEmailFuncionarioUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email do Funcionario"/>
+    <EditText
+        android:id="@+id/editSenhaFuncionarioUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha do Funcionario"/>
+    <EditText
+        android:id="@+id/editNascimentoFuncionarioUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nascimento do Funcionario"/>
+    <EditText
+        android:id="@+id/editCPFFuncionarioUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPF do Funcionario"/>
+    <EditText
+        android:id="@+id/editEnderecoFuncionarioUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Endereço do Funcionario"/>
+    <EditText
+        android:id="@+id/editSexoFuncionarioUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sexo do Funcionario"/>
+    <EditText
+        android:id="@+id/editFlGerenteFuncionarioUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Gerente"/>
+    <EditText
+        android:id="@+id/editIdLojaFuncionarioUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Id da Loja"/>
+    <Button
+        android:onClick="removerFuncionario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Remover"/>
+
+</LinearLayout>

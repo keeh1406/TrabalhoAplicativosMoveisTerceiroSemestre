@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/editNomeClienteUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Cliente"/>
+    <EditText
+        android:id="@+id/editEmailClienteUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email do Cliente"/>
+    <EditText
+        android:id="@+id/editSenhaClienteUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha do Cliente"/>
+    <EditText
+        android:id="@+id/editNascimentoClienteUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nascimento do Cliente"/>
+    <EditText
+        android:id="@+id/editCPFClienteUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CPF do Cliente"/>
+    <EditText
+        android:id="@+id/editEnderecoClienteUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Endereço do Cliente"/>
+    <EditText
+        android:id="@+id/editSexoClienteUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sexo do Cliente"/>
+    <Button
+        android:onClick="removerCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Remover"/>
+
+</LinearLayout>
