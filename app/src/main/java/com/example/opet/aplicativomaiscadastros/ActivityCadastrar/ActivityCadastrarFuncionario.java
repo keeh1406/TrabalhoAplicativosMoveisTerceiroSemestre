@@ -53,7 +53,7 @@ public class ActivityCadastrarFuncionario extends Activity {
         editEnderecoFuncionario = (EditText) findViewById(R.id.editEnderecoFuncionario);
         editTelefoneFuncionario = (EditText) findViewById(R.id.editTelefoneFuncionario);
         checkboxFlGerenteFuncionario = (CheckBox) findViewById(R.id.checkboxFlGerenteFuncionario);
-        spinnerSexoFuncionario = (Spinner) findViewById(R.id.SpinnerSexoFuncionario);
+        spinnerSexoFuncionario = (Spinner) findViewById(R.id.spinnerSexoFuncionario);
 
         spinnerIdLojaFuncionario = findViewById(R.id.spinnerIdLojaFuncionario);
         List<Loja> lojas = new ArrayList<>();

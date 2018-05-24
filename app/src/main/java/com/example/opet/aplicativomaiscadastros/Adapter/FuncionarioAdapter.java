@@ -47,7 +47,7 @@ public class FuncionarioAdapter extends ArrayAdapter{
         TextView textCPFFuncionario = (TextView) mView.findViewById(R.id.textCPFFuncionario);
         TextView textEnderecoFuncionario = (TextView) mView.findViewById(R.id.textEnderecoFuncionario);
         TextView textTelefoneFuncionario = (TextView) mView.findViewById(R.id.textTelefoneFuncionario);
-        TextView textSexoFuncionario = (TextView) mView.findViewById(R.id.SpinnerSexoFuncionario);
+        TextView textSexoFuncionario = (TextView) mView.findViewById(R.id.spinnerSexoFuncionario);
         TextView textFlGerenteFuncionario = (TextView) mView.findViewById(R.id.textFlGerenteFuncionario);
         TextView textIdLojaFuncionario = (TextView) mView.findViewById(R.id.textIdLojaFuncionario);
 
