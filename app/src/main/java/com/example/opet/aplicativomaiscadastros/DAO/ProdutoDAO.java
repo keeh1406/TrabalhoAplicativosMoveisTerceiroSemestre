@@ -38,6 +38,7 @@ public class ProdutoDAO {
         valores = new ContentValues();
         valores.put(BancoUtil.NOME_PRODUTO, produto.getNomeProduto());
         valores.put(BancoUtil.DESCRICAO_PRODUTO, produto.getDescricaoProduto());
+        valores.put(BancoUtil.VALOR, produto.getValor());
         valores.put(BancoUtil.PRODUTO_FORNECEDOR, produto.getId_Fornecedor());
         valores.put(BancoUtil.PRODUTO_MARCA, produto.getId_Marca());
         valores.put(BancoUtil.PRODUTO_SETOR, produto.getId_Setor());
@@ -51,7 +52,7 @@ public class ProdutoDAO {
 
     public Produto carregaProdutoPorID(long id) throws ParseException {
         Cursor cursor;
-        String[] campos = {BancoUtil.ID_PRODUTO, BancoUtil.NOME_PRODUTO, BancoUtil.DESCRICAO_PRODUTO,
+        String[] campos = {BancoUtil.ID_PRODUTO, BancoUtil.NOME_PRODUTO, BancoUtil.DESCRICAO_PRODUTO, BancoUtil.VALOR,
                  BancoUtil.PRODUTO_FORNECEDOR, BancoUtil.PRODUTO_MARCA, BancoUtil.PRODUTO_SETOR};
         db = banco.getReadableDatabase();
 
@@ -67,6 +68,7 @@ public class ProdutoDAO {
             int idProduto = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.ID_PRODUTO));
             String nomeProduto = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.NOME_PRODUTO));
             String descricaoProduto = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.DESCRICAO_PRODUTO));
+            int valor = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.VALOR));
             int fornecedorProduto = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.PRODUTO_FORNECEDOR));
             int marcaProduto = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.PRODUTO_MARCA));
             int setorProduto = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.PRODUTO_SETOR));
@@ -74,6 +76,7 @@ public class ProdutoDAO {
             produto.setIdProduto(idProduto);
             produto.setNomeProduto(nomeProduto);
             produto.setDescricaoProduto(descricaoProduto);
+            produto.setValor(valor);
             produto.setId_Fornecedor(fornecedorProduto);
             produto.setId_Setor(setorProduto);
             produto.setId_Marca(marcaProduto);
@@ -85,7 +88,7 @@ public class ProdutoDAO {
 
     public Cursor carregaDados() {
         Cursor cursor;
-        String[] campos = {BancoUtil.ID_PRODUTO, BancoUtil.NOME_PRODUTO, BancoUtil.DESCRICAO_PRODUTO,
+        String[] campos = {BancoUtil.ID_PRODUTO, BancoUtil.NOME_PRODUTO, BancoUtil.DESCRICAO_PRODUTO, BancoUtil.VALOR,
                  BancoUtil.PRODUTO_SETOR, BancoUtil.PRODUTO_MARCA, BancoUtil.PRODUTO_FORNECEDOR};
         db = banco.getReadableDatabase();
 
@@ -113,6 +116,7 @@ public class ProdutoDAO {
                     int idProduto = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.ID_PRODUTO));
                     String nomeProduto = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.NOME_PRODUTO));
                     String descricaoProduto = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.DESCRICAO_PRODUTO));
+                    int valor = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.VALOR));
                     int fornecedorProduto = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.PRODUTO_FORNECEDOR));
                     int marcaProduto = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.PRODUTO_MARCA));
                     int setorProduto = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.PRODUTO_SETOR));
@@ -120,6 +124,7 @@ public class ProdutoDAO {
                     produto.setIdProduto(idProduto);
                     produto.setNomeProduto(nomeProduto);
                     produto.setDescricaoProduto(descricaoProduto);
+                    produto.setValor(valor);
                     produto.setId_Fornecedor(fornecedorProduto);
                     produto.setId_Setor(setorProduto);
                     produto.setId_Marca(marcaProduto);
@@ -151,6 +156,7 @@ public class ProdutoDAO {
         where = BancoUtil.ID_PRODUTO + " = " + produto.getIdProduto();
         where = BancoUtil.NOME_PRODUTO + " = " + produto.getNomeProduto();
         where = BancoUtil.DESCRICAO_PRODUTO + " = " + produto.getDescricaoProduto();
+        where = BancoUtil.VALOR + " = " + produto.getValor();
         where = BancoUtil.PRODUTO_SETOR + " = " + produto.getIdProduto();
         where = BancoUtil.PRODUTO_FORNECEDOR + " = " + produto.getId_Fornecedor();
         where = BancoUtil.PRODUTO_MARCA + " = " + produto.getId_Marca();
@@ -158,6 +164,7 @@ public class ProdutoDAO {
         valores = new ContentValues();
         valores.put(BancoUtil.NOME_PRODUTO, produto.getNomeProduto());
         valores.put(BancoUtil.DESCRICAO_PRODUTO, produto.getDescricaoProduto());
+        valores.put(BancoUtil.VALOR, produto.getValor());
         valores.put(BancoUtil.PRODUTO_SETOR, produto.getId_Setor());
         valores.put(BancoUtil.PRODUTO_MARCA, produto.getId_Marca());
         valores.put(BancoUtil.PRODUTO_FORNECEDOR, produto.getId_Fornecedor());

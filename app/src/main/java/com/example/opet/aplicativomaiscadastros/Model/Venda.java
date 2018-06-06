@@ -82,9 +82,7 @@ public class Venda {
         this.idClienteVenda = idClienteVenda;
     }
 
-    public String getFechado() {
-        return fechado;
-    }
+    public String getFechado() { return fechado; }
 
     public void setFechado(String fechado) {
         this.fechado = fechado;

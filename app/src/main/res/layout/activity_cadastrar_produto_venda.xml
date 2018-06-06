@@ -1,40 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/editNomeProduto"
+        android:id="@+id/editValorUnitarioProduto_Venda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome do Produto"/>
+        android:hint="Valor Unitario"/>
     <EditText
-        android:id="@+id/editDescricaoProduto"
+        android:id="@+id/editQuantidadeProduto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descrição do Produto"/>
-    <EditText
-        android:id="@+id/editValorProduto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Validade do Produto"/>
+        android:hint="Quantidade"/>
+
     <Spinner
-        android:id="@+id/spinnerSetorProduto"
+        android:id="@+id/spinnerProduto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Setor do Produto"/>
+        android:hint="Produto"/>
     <Spinner
-        android:id="@+id/spinnerMarcaProduto"
+        android:id="@+id/spinnerVenda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Marca do Produto"/>
-    <Spinner
-        android:id="@+id/spinnerFornecedorProduto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Fornecedor do Produto"/>
+        android:hint="Venda"/>
     <Button
-        android:onClick="salvarProduto"
+        android:onClick="salvarProduto_venda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

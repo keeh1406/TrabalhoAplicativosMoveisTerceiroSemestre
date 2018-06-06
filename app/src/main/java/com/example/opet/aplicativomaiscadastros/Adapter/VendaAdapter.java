@@ -40,20 +40,16 @@ public class VendaAdapter extends ArrayAdapter {
         Venda venda = vendas.get(position);
 
         TextView textIdVenda = (TextView) mView.findViewById(R.id.textIdVenda);
-        TextView textQuantidadeProduto = (TextView) mView.findViewById(R.id.textQuantidadeProdutoVenda);
         TextView textDescricaoVenda = (TextView) mView.findViewById(R.id.textDescricaoVenda);
         TextView textValorTotalVenda = (TextView) mView.findViewById(R.id.textValorTotalVenda);
-        TextView textValorUnitarioVenda = (TextView) mView.findViewById(R.id.textValorUnitarioVenda);
         TextView textFormaPagamentoVenda = (TextView) mView.findViewById(R.id.textFormaPagamentoVenda);
         TextView textDataVenda = (TextView) mView.findViewById(R.id.textDataVenda);
+        TextView textFechado = (TextView) mView.findViewById(R.id.textFechadoVenda);
         TextView textIdProdutoVenda = (TextView) mView.findViewById(R.id.textIdProdutoVenda);
         TextView textIdClienteVenda = (TextView) mView.findViewById(R.id.textIdClienteVenda);
 
         if(textIdVenda != null){
             textIdVenda.setText(String.valueOf(venda.getIdVenda()));
-        }
-        if(textQuantidadeProduto != null){
-            textQuantidadeProduto.setText(venda.getQuantidadeProduto());
         }
         if(textDescricaoVenda != null){
             textDescricaoVenda.setText(venda.getDescricaoVenda());
@@ -64,9 +60,6 @@ public class VendaAdapter extends ArrayAdapter {
         if(textValorTotalVenda != null){
             textValorTotalVenda.setText(String.valueOf(venda.getValorTotalVenda()));
         }
-        if(textValorUnitarioVenda != null){
-            textValorUnitarioVenda.setText(String.valueOf(venda.getValorUnitarioVenda()));
-        }
         if(textFormaPagamentoVenda != null){
             textFormaPagamentoVenda.setText(String.valueOf(venda.getFormaPagamentoVenda()));
         }
@@ -75,6 +68,9 @@ public class VendaAdapter extends ArrayAdapter {
         }
         if(textIdClienteVenda != null){
             textIdClienteVenda.setText(String.valueOf(venda.getIdClienteVenda()));
+        }
+        if(textFechado != null){
+            textFechado.setText(String.valueOf(venda.getFechado()));
         }
         return mView;
     }

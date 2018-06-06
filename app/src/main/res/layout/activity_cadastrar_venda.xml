@@ -9,20 +9,10 @@
         android:layout_height="wrap_content"
         android:hint="Descrição da Venda"/>
     <EditText
-        android:id="@+id/editQuantidadeProdutoVenda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Quantidade de Produtos Vendidos"/>
-    <EditText
         android:id="@+id/editValorTotalVenda"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Valor Total da Venda"/>
-    <EditText
-        android:id="@+id/editValorUnitarioVenda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Valor Unitario da Venda"/>
     <EditText
         android:id="@+id/editFormaPagamentoVenda"
         android:layout_width="match_parent"
@@ -33,6 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Data da Venda"/>
+    <CheckBox
+        android:id="@+id/checkboxFechado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Já foi fechado a venda? "/>
     <Spinner
         android:id="@+id/spinnerIdProdutoVenda"
         android:layout_width="match_parent"

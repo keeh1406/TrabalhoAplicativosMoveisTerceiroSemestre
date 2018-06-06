@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -35,11 +36,10 @@ import java.util.List;
 
 public class ActivityCadastrarVenda extends Activity {
     private EditText editDescricaoVenda;
-    private EditText editQuantidadeProdutoVenda;
     private EditText editValorTotalVenda;
-    private EditText editValorUnitarioVenda;
     private EditText editFormaPagamentoVenda;
     private EditText editDataVenda;
+    private CheckBox checkboxFechado;
     private Spinner spinnerIdProdutoVenda;
     private Spinner spinnerIdClienteVenda;
     private Produto produto;
@@ -51,10 +51,9 @@ public class ActivityCadastrarVenda extends Activity {
         setContentView(R.layout.activity_cadastrar_produto);
 
         editDescricaoVenda = (EditText) findViewById(R.id.editDescricaoVenda);
-        editQuantidadeProdutoVenda = (EditText) findViewById(R.id.editValidadeProduto);
         editValorTotalVenda = (EditText) findViewById(R.id.editValorTotalVenda);
-        editValorUnitarioVenda = (EditText) findViewById(R.id.editValorUnitarioVenda);
         editFormaPagamentoVenda = (EditText) findViewById(R.id.editFormaPagamentoVenda);
+        checkboxFechado = (CheckBox) findViewById(R.id.checkboxFechado);
         editDataVenda = (EditText) findViewById(R.id.editDataVenda);
 
         spinnerIdClienteVenda = findViewById(R.id.spinnerIdClienteVenda);
@@ -93,15 +92,14 @@ public class ActivityCadastrarVenda extends Activity {
     public void salvarVenda(View v) throws ParseException {
         VendaDAO vendaDAO = new VendaDAO(this);
         Venda venda = new Venda();
-        venda.setQuantidadeProduto(editQuantidadeProdutoVenda.getText().toString());
         venda.setDescricaoVenda(editDescricaoVenda.getText().toString());
-        venda.setValorTotalVenda(editValorTotalVenda.getText().toString());
-        venda.setDescricaoProduto(editValorUnitarioVenda.getText().toString());
-        venda.setDescricaoProduto(editFormaPagamentoVenda.getText().toString());
+        venda.setValorTotalVenda(Long.valueOf(editValorTotalVenda.getText().toString()));
+        venda.setFormaPagamentoVenda(editFormaPagamentoVenda.getText().toString());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         venda.setDataVenda(simpleDateFormat.parse(editDataVenda.getText().toString()));
-        venda.setId_Setor(produto.getIdProduto());
-        venda.setId_Marca(cliente.getIdCliente());
+        venda.setFechado(checkboxFechado.toString());
+        venda.setIdProdutoVenda(produto.getIdProduto());
+        venda.setIdVenda(cliente.getIdCliente());
 
         long resultado = vendaDAO.insereDado(venda);
 

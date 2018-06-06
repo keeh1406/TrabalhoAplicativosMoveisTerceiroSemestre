@@ -57,6 +57,7 @@ public class BancoUtil {
     public static final String ID_PRODUTO = "idProduto";
     public static final String NOME_PRODUTO = "nomeProduto";
     public static final String DESCRICAO_PRODUTO = "descricaoProduto";
+    public static final String VALOR = "valor";
     public static final String PRODUTO_FORNECEDOR = "fornecedorProduto";
     public static final String PRODUTO_SETOR = "setorProduto";
     public static final String PRODUTO_MARCA = "marcaProduto";

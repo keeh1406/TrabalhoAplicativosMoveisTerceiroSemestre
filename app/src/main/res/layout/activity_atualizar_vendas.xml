@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/editDescricaoVendaUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descrição da Venda"/>
+    <EditText
+        android:id="@+id/editValorTotalVendaUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor Total da Venda"/>
+    <EditText
+        android:id="@+id/editFormaPagamentoVendaUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Forma de Pagamento da Venda"/>
+    <EditText
+        android:id="@+id/editFechadoUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fechamento da Venda"/>
+    <EditText
+        android:id="@+id/editIdProdutoVendaUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="IdProduto na Venda"/>
+    <EditText
+        android:id="@+id/editIdClienteUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="IdCliente na Venda"/>
+    <Button
+        android:onClick="removerVenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Remover"/>
+
+</LinearLayout>
