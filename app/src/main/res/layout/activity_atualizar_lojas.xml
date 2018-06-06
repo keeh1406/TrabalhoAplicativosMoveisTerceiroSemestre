@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/editNomeLojaUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Loja"/>
+    <EditText
+        android:id="@+id/editCNPJLojaUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="CNPJ do Loja"/>
+    <EditText
+        android:id="@+id/editEmailLojaUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email do Loja"/>
+    <EditText
+        android:id="@+id/editEnderecoLojaUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Endereço do Loja"/>
+    <EditText
+        android:id="@+id/editTelefoneLojaUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telefone do Loja"/>
+    <Button
+        android:onClick="removerLoja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Remover"/>
+
+</LinearLayout>
