@@ -16,11 +16,13 @@ import com.example.opet.aplicativomaiscadastros.Adapter.MarcaAdapter;
 import com.example.opet.aplicativomaiscadastros.Adapter.ProdutoAdapter;
 import com.example.opet.aplicativomaiscadastros.Adapter.SetorAdapter;
 import com.example.opet.aplicativomaiscadastros.DAO.ProdutoDAO;
+import com.example.opet.aplicativomaiscadastros.DAO.VendaDAO;
 import com.example.opet.aplicativomaiscadastros.Model.Cliente;
 import com.example.opet.aplicativomaiscadastros.Model.Fornecedor;
 import com.example.opet.aplicativomaiscadastros.Model.Marca;
 import com.example.opet.aplicativomaiscadastros.Model.Produto;
 import com.example.opet.aplicativomaiscadastros.Model.Setor;
+import com.example.opet.aplicativomaiscadastros.Model.Venda;
 import com.example.opet.aplicativomaiscadastros.R;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -88,20 +90,20 @@ public class ActivityCadastrarVenda extends Activity {
         });
     }
 
-    public void salvarProduto(View v) throws ParseException {
-        ProdutoDAO produtoDAO = new ProdutoDAO(this);
-        Produto produto = new Produto();
-        produto.setDescricaoProduto(editDescricaoVenda.getText().toString());
-        produto.setDescricaoProduto(editQuantidadeProdutoVenda.getText().toString());
-        produto.setDescricaoProduto(editValorTotalVenda.getText().toString());
-        produto.setDescricaoProduto(editValorUnitarioVenda.getText().toString());
-        produto.setDescricaoProduto(editFormaPagamentoVenda.getText().toString());
+    public void salvarVenda(View v) throws ParseException {
+        VendaDAO vendaDAO = new VendaDAO(this);
+        Venda venda = new Venda();
+        venda.setQuantidadeProduto(editQuantidadeProdutoVenda.getText().toString());
+        venda.setDescricaoVenda(editDescricaoVenda.getText().toString());
+        venda.setValorTotalVenda(editValorTotalVenda.getText().toString());
+        venda.setDescricaoProduto(editValorUnitarioVenda.getText().toString());
+        venda.setDescricaoProduto(editFormaPagamentoVenda.getText().toString());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        produto.setDataValidadeProduto(simpleDateFormat.parse(editDataVenda.getText().toString()));
-        produto.setId_Setor(produto.getIdProduto());
-        produto.setId_Marca(cliente.getIdCliente());
+        venda.setDataVenda(simpleDateFormat.parse(editDataVenda.getText().toString()));
+        venda.setId_Setor(produto.getIdProduto());
+        venda.setId_Marca(cliente.getIdCliente());
 
-        long resultado = produtoDAO.insereDado(produto);
+        long resultado = vendaDAO.insereDado(venda);
 
         if(resultado > 0){
             exibirMensagem("Cadastro realizado com sucesso!");

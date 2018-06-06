@@ -65,7 +65,7 @@ public class ActivityAtualizarFuncionario extends Activity {
         editEmailFuncionario.setText(funcionario.getEmailFuncionario());
         editSenhaFuncionario.setText(funcionario.getSenhaFuncionario());
         editNascimentoFuncionario.setText(Util.toString(funcionario.getNascimentoFuncionario()));
-        editCPFFuncionario.setText(funcionario.getCPFFuncionario());
+        editCPFFuncionario.setText(String.valueOf(funcionario.getCPFFuncionario()));
         editEnderecoFuncionario.setText(funcionario.getEnderecoFuncionario());
         editSexoFuncionario.setText(funcionario.getSexoFuncionario());
         editFlGerenteFuncionario.setText(funcionario.getFlGerente());
@@ -78,11 +78,11 @@ public class ActivityAtualizarFuncionario extends Activity {
         funcionario.setSenhaFuncionario(editSenhaFuncionario.getText().toString());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         funcionario.setNascimentoFuncionario(simpleDateFormat.parse(editNascimentoFuncionario.getText().toString()));
-        funcionario.setCPFFuncionario(editCPFFuncionario.getText().toString());
+        funcionario.setCPFFuncionario(Long.valueOf(String.valueOf(funcionario.getCPFFuncionario())));
         funcionario.setEnderecoFuncionario(editEnderecoFuncionario.getText().toString());
         funcionario.setSexoFuncionario(editSexoFuncionario.getText().toString());
         funcionario.setFlGerente(editFlGerenteFuncionario.getText().toString());
-        funcionario.setId_Loja(editIdLojaFuncionario.getText().toString());
+        funcionario.setId_Loja(Integer.valueOf(editIdLojaFuncionario.getText().toString()));
 
         if(funcionarioDAO.atualizaFuncionario(funcionario))
             Toast.makeText(ActivityAtualizarFuncionario.this, "Funcionario atualizado com sucesso.", Toast.LENGTH_SHORT).show();

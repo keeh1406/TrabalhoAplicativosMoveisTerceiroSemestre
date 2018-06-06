@@ -57,19 +57,24 @@ public class BancoUtil {
     public static final String ID_PRODUTO = "idProduto";
     public static final String NOME_PRODUTO = "nomeProduto";
     public static final String DESCRICAO_PRODUTO = "descricaoProduto";
-    public static final String VALIDADE_PRODUTO = "validadeProduto";
     public static final String PRODUTO_FORNECEDOR = "fornecedorProduto";
     public static final String PRODUTO_SETOR = "setorProduto";
     public static final String PRODUTO_MARCA = "marcaProduto";
+
+    public static final String TABELA_PRODUTO_VENDA = "produtoVenda";
+    public static final String ID_PRODUTO_VENDA = "idProdutoVenda";
+    public static final String VALOR_UNITARIO = "valorUnitario";
+    public static final String PRODUTO_VENDA_PRODUTO = "produtoProdutoVenda";
+    public static final String PRODUTO_VENDA_VENDA = "vendaProdutoVenda";
 
     public static final String TABELA_VENDA = "venda";
     public static final String ID_VENDA = "idVenda";
     public static final String QUANTIDADE_PRODUTO = "quantidadeProduto";
     public static final String DESCRICAO_VENDA = "descricaoVenda";
     public static final String VALOR_TOTAL_VENDA = "valorTotalVenda";
-    public static final String VALOR_UNITARIO_VENDA = "valorUnitarioVenda";
     public static final String FORMA_PAGAMENTO_VENDA = "formaPagamentoVenda";
     public static final String DATA_VENDA = "dataVenda";
+    public static final String FECHADO = "fechado";
     public static final String VENDA_PRODUTO = "id_Produto";
     public static final String VENDA_CLIENTE = "id_Cliente";
 

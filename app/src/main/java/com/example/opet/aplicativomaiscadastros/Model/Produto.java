@@ -10,7 +10,6 @@ public class Produto {
     private int idProduto;
     private String nomeProduto;
     private String descricaoProduto;
-    private Date dataValidadeProduto;
     private int id_Setor;
     private int id_Marca;
     private int id_Fornecedor;
@@ -22,11 +21,10 @@ public class Produto {
         return idProduto;
     }
 
-    public Produto(int idProduto, String nomeProduto, String descricaoProduto, Date dataValidadeProduto) {
+    public Produto(int idProduto, String nomeProduto, String descricaoProduto) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.descricaoProduto = descricaoProduto;
-        this.dataValidadeProduto = dataValidadeProduto;
         this.id_Setor = id_Setor;
         this.id_Marca = id_Marca;
         this.id_Fornecedor = id_Fornecedor;
@@ -42,14 +40,6 @@ public class Produto {
 
     public void setNomeProduto(String nomeProduto) {
         this.nomeProduto = nomeProduto;
-    }
-
-    public Date getDataValidadeProduto() {
-        return dataValidadeProduto;
-    }
-
-    public void setDataValidadeProduto(Date dataValidadeProduto) {
-        this.dataValidadeProduto = dataValidadeProduto;
     }
 
     public int getId_Setor() {

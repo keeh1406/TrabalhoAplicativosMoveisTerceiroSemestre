@@ -61,7 +61,7 @@ public class ActivityAtualizarCliente extends Activity {
         editEmailCliente.setText(cliente.getEmailCliente());
         editSenhaCliente.setText(cliente.getSenhaCliente());
         editNascimentoCliente.setText(Util.toString(cliente.getNascimentoCliente()));
-        editCPFCliente.setText(cliente.getCPFCliente());
+        editCPFCliente.setText(String.valueOf(cliente.getCPFCliente()));
         editEnderecoCliente.setText(cliente.getEnderecoCliente());
         editSexoCliente.setText(cliente.getSexoCliente());
     }
@@ -72,7 +72,7 @@ public class ActivityAtualizarCliente extends Activity {
         cliente.setSenhaCliente(editSenhaCliente.getText().toString());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         cliente.setNascimentoCliente(simpleDateFormat.parse(editNascimentoCliente.getText().toString()));
-        cliente.setCPFCliente(editCPFCliente.getText().toString());
+        cliente.setCPFCliente(Long.valueOf(String.valueOf(cliente.getCPFCliente())));
         cliente.setEnderecoCliente(editEnderecoCliente.getText().toString());
         cliente.setSexoCliente(editSexoCliente.getText().toString());
 

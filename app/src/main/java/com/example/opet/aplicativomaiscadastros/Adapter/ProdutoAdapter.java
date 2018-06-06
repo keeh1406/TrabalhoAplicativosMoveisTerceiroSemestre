@@ -42,7 +42,6 @@ public class ProdutoAdapter extends ArrayAdapter{
         TextView textIdProduto = (TextView) mView.findViewById(R.id.textIdProduto);
         TextView textNomeProduto = (TextView) mView.findViewById(R.id.textNomeProduto);
         TextView textDescricaoProduto = (TextView) mView.findViewById(R.id.textDescricaoProduto);
-        TextView textDataValidadeProduto = (TextView) mView.findViewById(R.id.textValidadeProduto);
         TextView textSetorProduto = (TextView) mView.findViewById(R.id.textSetorProduto);
         TextView textMarcaProduto = (TextView) mView.findViewById(R.id.textMarcaProduto);
         TextView textFornecedorProduto = (TextView) mView.findViewById(R.id.textFornecedorProduto);
@@ -55,9 +54,6 @@ public class ProdutoAdapter extends ArrayAdapter{
         }
         if(textDescricaoProduto != null){
             textDescricaoProduto.setText(produto.getDescricaoProduto());
-        }
-        if(textDataValidadeProduto != null){
-            textDataValidadeProduto.setText(String.valueOf(produto.getDataValidadeProduto()));
         }
         if(textSetorProduto != null){
             textSetorProduto.setText(String.valueOf(produto.getId_Setor()));

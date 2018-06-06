@@ -32,7 +32,6 @@ import java.util.List;
 public class ActivityCadastrarProduto extends Activity {
     private EditText editNomeProduto;
     private EditText editDescricaoProduto;
-    private EditText editValidadeProduto;
     private Spinner spinnerSetorProduto;
     private Spinner spinnerMarcaProduto;
     private Spinner spinnerFornecedorProduto;
@@ -47,7 +46,6 @@ public class ActivityCadastrarProduto extends Activity {
 
         editNomeProduto = (EditText) findViewById(R.id.editNomeProduto);
         editDescricaoProduto = (EditText) findViewById(R.id.editDescricaoProduto);
-        editValidadeProduto = (EditText) findViewById(R.id.editValidadeProduto);
 
         spinnerSetorProduto = findViewById(R.id.spinnerSetorProduto);
         List<Setor> setores = new ArrayList<>();
@@ -103,8 +101,6 @@ public class ActivityCadastrarProduto extends Activity {
         Produto produto = new Produto();
         produto.setNomeProduto(editNomeProduto.getText().toString());
         produto.setDescricaoProduto(editDescricaoProduto.getText().toString());
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        produto.setDataValidadeProduto(simpleDateFormat.parse(editValidadeProduto.getText().toString()));
         produto.setId_Setor(setor.getIdSetor());
         produto.setId_Marca(marca.getIdMarca());
         produto.setId_Fornecedor(fornecedor.getIdFornecedor());

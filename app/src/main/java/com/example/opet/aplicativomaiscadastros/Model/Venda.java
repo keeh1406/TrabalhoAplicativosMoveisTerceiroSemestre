@@ -8,24 +8,22 @@ import java.util.Date;
 
 public class Venda {
     private int idVenda;
-    private int quantidadeProduto;
     private String descricaoVenda;
     private Long valorTotalVenda;
-    private long valorUnitarioVenda;
     private String formaPagamentoVenda;
     private Date dataVenda;
+    private String fechado;
     private int idProdutoVenda;
     private int idClienteVenda;
 
     public Venda() {
     }
 
-    public Venda(int idVenda, int quantidadeProduto, String descricaoVenda, Long valorTotalVenda, Long valorUnitarioVenda, Date dataVenda, String formaPagamentoVenda) {
+    public Venda(int idVenda, String descricaoVenda, Long valorTotalVenda, String fechado, Date dataVenda, String formaPagamentoVenda) {
         this.idVenda = idVenda;
-        this.quantidadeProduto = quantidadeProduto;
         this.descricaoVenda = descricaoVenda;
         this.valorTotalVenda = valorTotalVenda;
-        this.valorUnitarioVenda = valorUnitarioVenda;
+        this.fechado = fechado;
         this.formaPagamentoVenda = formaPagamentoVenda;
         this.dataVenda = dataVenda;
     }
@@ -36,14 +34,6 @@ public class Venda {
 
     public void setIdVenda(int idVenda) {
         this.idVenda = idVenda;
-    }
-
-    public int getQuantidadeProduto() {
-        return quantidadeProduto;
-    }
-
-    public void setQuantidadeProduto(int quantidadeProduto) {
-        this.quantidadeProduto = quantidadeProduto;
     }
 
     public String getDescricaoVenda() {
@@ -61,12 +51,6 @@ public class Venda {
     public void setValorTotalVenda(Long valorTotalVenda) {
         this.valorTotalVenda = valorTotalVenda;
     }
-
-    public Long getValorUnitarioVenda() {
-        return valorUnitarioVenda;
-    }
-
-    public void setValorUnitarioVenda(Long valorUnitarioVenda) { this.valorUnitarioVenda = valorUnitarioVenda;}
 
     public String getFormaPagamentoVenda() {
         return formaPagamentoVenda;
@@ -96,5 +80,13 @@ public class Venda {
 
     public void setIdClienteVenda(int idClienteVenda) {
         this.idClienteVenda = idClienteVenda;
+    }
+
+    public String getFechado() {
+        return fechado;
+    }
+
+    public void setFechado(String fechado) {
+        this.fechado = fechado;
     }
 }

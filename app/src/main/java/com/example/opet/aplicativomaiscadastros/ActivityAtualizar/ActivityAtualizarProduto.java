@@ -31,7 +31,6 @@ public class ActivityAtualizarProduto extends Activity {
     private Produto produto;
     private EditText editNomeProduto;
     private EditText editDescricaoProduto;
-    private EditText editValidadeProduto;
     private EditText editSetorProduto;
     private EditText editMarcaProduto;
     private EditText editFornecedorProduto;
@@ -56,14 +55,12 @@ public class ActivityAtualizarProduto extends Activity {
 
         editNomeProduto = (EditText) findViewById(R.id.editNomeProdutoUpdate);
         editDescricaoProduto = (EditText) findViewById(R.id.editDescricaoProdutoUpdate);
-        editValidadeProduto = (EditText) findViewById(R.id.editValidadeProdutoUpdate);
         editSetorProduto = (EditText) findViewById(R.id.editSetorProdutoUpdate);
         editMarcaProduto = (EditText) findViewById(R.id.editMarcaProdutoUpdate);
         editFornecedorProduto = (EditText) findViewById(R.id.editFornecedorProdutoUpdate);
 
         editNomeProduto.setText(produto.getNomeProduto());
         editDescricaoProduto.setText(produto.getDescricaoProduto());
-        editValidadeProduto.setText(Util.toString(produto.getDataValidadeProduto()));
         editSetorProduto.setText(produto.getId_Setor());
         editMarcaProduto.setText(produto.getId_Marca());
         editFornecedorProduto.setText(produto.getId_Fornecedor());
@@ -72,8 +69,6 @@ public class ActivityAtualizarProduto extends Activity {
     public void atualizarProduto(View v) throws ParseException {
         produto.setNomeProduto(editNomeProduto.getText().toString());
         produto.setDescricaoProduto(editDescricaoProduto.getText().toString());
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        produto.setDataValidadeProduto(simpleDateFormat.parse(editValidadeProduto.getText().toString()));
         produto.setId_Setor(Integer.parseInt(editSetorProduto.getText().toString()));
         produto.setId_Marca(Integer.parseInt(editMarcaProduto.getText().toString()));
         produto.setId_Fornecedor(Integer.parseInt(editFornecedorProduto.getText().toString()));

@@ -76,20 +76,25 @@ public class DataBaseFactory extends SQLiteOpenHelper {
                 + BancoUtil.ID_PRODUTO + " integer primary key autoincrement,"
                 + BancoUtil.NOME_PRODUTO + " text,"
                 + BancoUtil.DESCRICAO_PRODUTO + " text,"
-                + BancoUtil.VALIDADE_PRODUTO + " text,"
-                + BancoUtil.PRODUTO_FORNECEDOR + " text,"
+                + " FOREIGN KEY (" + BancoUtil.PRODUTO_FORNECEDOR + ") REFERENCES " + BancoUtil.TABELA_FORNECEDOR + "(" + BancoUtil.ID_FORNECEDOR + "),"
                 + " FOREIGN KEY (" + BancoUtil.PRODUTO_SETOR + ") REFERENCES " + BancoUtil.TABELA_SETOR + "(" + BancoUtil.ID_SETOR + "),"
                 + " FOREIGN KEY (" + BancoUtil.PRODUTO_MARCA + ") REFERENCES " + BancoUtil.TABELA_MARCA + "(" + BancoUtil.ID_MARCA + ")";
+        db.execSQL(sql);
+
+        sql = "CREATE TABLE "+ BancoUtil.TABELA_PRODUTO_VENDA +"("
+                + BancoUtil.ID_PRODUTO_VENDA + " integer primary key autoincrement,"
+                + BancoUtil.VALOR_UNITARIO + " text,"
+                + " FOREIGN KEY (" + BancoUtil.PRODUTO_VENDA_PRODUTO + ") REFERENCES " + BancoUtil.TABELA_PRODUTO + "(" + BancoUtil.ID_PRODUTO + "),"
+                + " FOREIGN KEY (" + BancoUtil.PRODUTO_VENDA_VENDA + ") REFERENCES " + BancoUtil.TABELA_VENDA + "(" + BancoUtil.ID_VENDA + ")";
         db.execSQL(sql);
 
         sql = "CREATE TABLE "+ BancoUtil.TABELA_VENDA +"("
                 + BancoUtil.ID_VENDA + " integer primary key autoincrement,"
                 + BancoUtil.DESCRICAO_VENDA + " text,"
-                + BancoUtil.QUANTIDADE_PRODUTO + " text,"
                 + BancoUtil.VALOR_TOTAL_VENDA + " text,"
-                + BancoUtil.VALOR_UNITARIO_VENDA + " text,"
                 + BancoUtil.FORMA_PAGAMENTO_VENDA + " text,"
                 + BancoUtil.DATA_VENDA + " text,"
+                + BancoUtil.FECHADO + " text,"
                 + " FOREIGN KEY (" + BancoUtil.VENDA_CLIENTE + ") REFERENCES " + BancoUtil.TABELA_CLIENTE + "(" + BancoUtil.ID_CLIENTE + "),"
                 + " FOREIGN KEY (" + BancoUtil.VENDA_PRODUTO + ") REFERENCES " + BancoUtil.TABELA_PRODUTO + "(" + BancoUtil.ID_PRODUTO + ")";
         db.execSQL(sql);

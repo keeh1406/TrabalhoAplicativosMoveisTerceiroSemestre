@@ -36,12 +36,11 @@ public class VendaDAO {
 
         db = banco.getWritableDatabase();
         valores = new ContentValues();
-        valores.put(BancoUtil.QUANTIDADE_PRODUTO, venda.getQuantidadeProduto());
         valores.put(BancoUtil.DESCRICAO_VENDA, venda.getDescricaoVenda());
         valores.put(BancoUtil.VALOR_TOTAL_VENDA, venda.getValorTotalVenda());
-        valores.put(BancoUtil.VALOR_UNITARIO_VENDA, venda.getValorUnitarioVenda());
         valores.put(BancoUtil.FORMA_PAGAMENTO_VENDA, venda.getFormaPagamentoVenda());
         valores.put(BancoUtil.DATA_VENDA, String.valueOf(venda.getDataVenda()));
+        valores.put(BancoUtil.FECHADO, String.valueOf(venda.getFechado()));
         valores.put(BancoUtil.VENDA_CLIENTE, venda.getIdClienteVenda());
         valores.put(BancoUtil.VENDA_PRODUTO, venda.getIdProdutoVenda());
 
@@ -55,7 +54,7 @@ public class VendaDAO {
     public Venda carregaVendaPorID(long id) throws ParseException {
         Cursor cursor;
         String[] campos = {BancoUtil.ID_VENDA, BancoUtil.QUANTIDADE_PRODUTO, BancoUtil.DESCRICAO_VENDA,
-                BancoUtil.DATA_VENDA, BancoUtil.VALOR_TOTAL_VENDA, BancoUtil.VALOR_UNITARIO_VENDA, BancoUtil.FORMA_PAGAMENTO_VENDA, BancoUtil.VENDA_PRODUTO, BancoUtil.VENDA_CLIENTE};
+                BancoUtil.DATA_VENDA, BancoUtil.VALOR_TOTAL_VENDA, BancoUtil.FORMA_PAGAMENTO_VENDA, BancoUtil.FECHADO, BancoUtil.VENDA_PRODUTO, BancoUtil.VENDA_CLIENTE};
         db = banco.getReadableDatabase();
 
         String where = BancoUtil.ID_VENDA + " = " + id;
@@ -72,18 +71,17 @@ public class VendaDAO {
             String descricaoVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.DESCRICAO_VENDA));
             String validadeVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.DATA_VENDA));
             long valorTotalVenda = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.VALOR_TOTAL_VENDA));
-            long valorUnitarioVenda = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.VALOR_UNITARIO_VENDA));
             String formaPagamentoVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.FORMA_PAGAMENTO_VENDA));
+            String fechado = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.FECHADO));
             int produtoVenda = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.VENDA_PRODUTO));
             int clienteVenda = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.VENDA_CLIENTE));
 
             venda.setIdVenda(idVenda);
-            venda.setQuantidadeProduto(quantidadeVenda);
             venda.setDescricaoVenda(descricaoVenda);
             venda.setDataVenda(Util.toDate(validadeVenda));
             venda.setValorTotalVenda(valorTotalVenda);
-            venda.setValorUnitarioVenda(valorUnitarioVenda);
             venda.setFormaPagamentoVenda(formaPagamentoVenda);
+            venda.setFechado(fechado);
             venda.setIdClienteVenda(clienteVenda);
             venda.setIdProdutoVenda(produtoVenda);
 
@@ -95,7 +93,7 @@ public class VendaDAO {
     public Cursor carregaDados() {
         Cursor cursor;
         String[] campos = {BancoUtil.ID_VENDA, BancoUtil.QUANTIDADE_PRODUTO, BancoUtil.DESCRICAO_VENDA,
-                BancoUtil.DATA_VENDA, BancoUtil.VALOR_TOTAL_VENDA, BancoUtil.VALOR_UNITARIO_VENDA, BancoUtil.FORMA_PAGAMENTO_VENDA, BancoUtil.VENDA_PRODUTO, BancoUtil.VENDA_CLIENTE};
+                BancoUtil.DATA_VENDA, BancoUtil.VALOR_TOTAL_VENDA, BancoUtil.FORMA_PAGAMENTO_VENDA, BancoUtil.FECHADO, BancoUtil.VENDA_PRODUTO, BancoUtil.VENDA_CLIENTE};
         db = banco.getReadableDatabase();
 
         String where = null;
@@ -124,18 +122,17 @@ public class VendaDAO {
                     String descricaoVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.DESCRICAO_VENDA));
                     String validadeVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.DATA_VENDA));
                     long valorTotalVenda = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.VALOR_TOTAL_VENDA));
-                    long valorUnitarioVenda = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.VALOR_UNITARIO_VENDA));
                     String formaPagamentoVenda = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.FORMA_PAGAMENTO_VENDA));
+                    String fechado = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.FECHADO));
                     int produtoVenda = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.VENDA_PRODUTO));
                     int clienteVenda = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.VENDA_CLIENTE));
 
                     venda.setIdVenda(idVenda);
-                    venda.setQuantidadeProduto(quantidadeProduto);
                     venda.setDescricaoVenda(descricaoVenda);
                     venda.setDataVenda(Util.toDate(validadeVenda));
                     venda.setValorTotalVenda(valorTotalVenda);
-                    venda.setValorUnitarioVenda(valorUnitarioVenda);
                     venda.setFormaPagamentoVenda(formaPagamentoVenda);
+                    venda.setFechado(fechado);
                     venda.setIdClienteVenda(clienteVenda);
                     venda.setIdProdutoVenda(produtoVenda);
 
@@ -166,21 +163,19 @@ public class VendaDAO {
         db = banco.getWritableDatabase();
 
         where = BancoUtil.ID_VENDA + " = " + venda.getIdVenda();
-        where = BancoUtil.QUANTIDADE_PRODUTO + " = " + venda.getQuantidadeProduto();
         where = BancoUtil.DESCRICAO_VENDA + " = " + venda.getDescricaoVenda();
         where = BancoUtil.DATA_VENDA + " = " + venda.getDataVenda();
         where = BancoUtil.VENDA_CLIENTE + " = " + venda.getIdVenda();
         where = BancoUtil.VALOR_TOTAL_VENDA+ " = " + venda.getValorTotalVenda();
-        where = BancoUtil.VALOR_UNITARIO_VENDA+ " = " + venda.getValorUnitarioVenda();
+        where = BancoUtil.FECHADO+ " = " + venda.getFechado();
         where = BancoUtil.VENDA_PRODUTO + " = " + venda.getIdProdutoVenda();
 
         valores = new ContentValues();
-        valores.put(BancoUtil.QUANTIDADE_PRODUTO, venda.getQuantidadeProduto());
         valores.put(BancoUtil.DESCRICAO_VENDA, venda.getDescricaoVenda());
         valores.put(BancoUtil.VALOR_TOTAL_VENDA, venda.getValorTotalVenda());
-        valores.put(BancoUtil.VALOR_UNITARIO_VENDA, venda.getValorUnitarioVenda());
         valores.put(BancoUtil.FORMA_PAGAMENTO_VENDA, venda.getFormaPagamentoVenda());
         valores.put(BancoUtil.DATA_VENDA, String.valueOf(venda.getDataVenda()));
+        valores.put(BancoUtil.FECHADO, String.valueOf(venda.getFechado()));
         valores.put(BancoUtil.VENDA_CLIENTE, venda.getIdClienteVenda());
         valores.put(BancoUtil.VENDA_PRODUTO, venda.getIdProdutoVenda());
 
