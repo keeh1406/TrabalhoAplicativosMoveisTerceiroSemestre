@@ -15,6 +15,11 @@
         android:layout_height="wrap_content"
         android:hint="Valor Total da Venda"/>
     <EditText
+        android:id="@+id/editDataVendaUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Data da Venda"/>
+    <EditText
         android:id="@+id/editFormaPagamentoVendaUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -135,7 +135,7 @@ public class Produto_VendaDAO {
         db.close();
     }
 
-    public boolean atualizaProdutoVenda(Produto_Venda produto_venda) {
+    public boolean atualizarProduto_Venda(Produto_Venda produto_venda) {
         ContentValues valores;
         String where;
 
