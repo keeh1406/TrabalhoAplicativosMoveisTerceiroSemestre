@@ -8,21 +8,15 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.example.opet.aplicativomaiscadastros.ActivityListar.ActivityListarProduto_Venda;
-import com.example.opet.aplicativomaiscadastros.Adapter.FornecedorAdapter;
-import com.example.opet.aplicativomaiscadastros.Adapter.LojaAdapter;
 import com.example.opet.aplicativomaiscadastros.Adapter.VendaAdapter;
 import com.example.opet.aplicativomaiscadastros.Adapter.ProdutoAdapter;
 import com.example.opet.aplicativomaiscadastros.DAO.Produto_VendaDAO;
-import com.example.opet.aplicativomaiscadastros.Model.Fornecedor;
-import com.example.opet.aplicativomaiscadastros.Model.Loja;
 import com.example.opet.aplicativomaiscadastros.Model.Venda;
 import com.example.opet.aplicativomaiscadastros.Model.Produto_Venda;
 import com.example.opet.aplicativomaiscadastros.Model.Produto;
 import com.example.opet.aplicativomaiscadastros.R;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,8 +37,8 @@ public class ActivityCadastrarProduto_Venda extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_produto_venda);
 
-        editQuantidadeProduto_Venda = (EditText) findViewById(R.id.textQuantidadeProdutoVenda);
-        valorUnitarioProduto_Venda = (EditText) findViewById(R.id.textValorUnitarioVenda);
+        editQuantidadeProduto_Venda = (EditText) findViewById(R.id.editQuantidadeProduto);
+        valorUnitarioProduto_Venda = (EditText) findViewById(R.id.editValorUnitarioProduto_Venda);
         spinnerProdutoProduto_Venda = findViewById(R.id.spinnerProduto);
         List<Produto> produtos = new ArrayList<>();
         final ProdutoAdapter produtoAdapter = new ProdutoAdapter(this,android.R.layout.simple_spinner_item,produtos);

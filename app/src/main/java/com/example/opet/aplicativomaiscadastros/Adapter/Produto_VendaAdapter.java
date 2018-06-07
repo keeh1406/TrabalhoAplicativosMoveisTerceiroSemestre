@@ -39,8 +39,8 @@ public class Produto_VendaAdapter extends ArrayAdapter {
         Produto_Venda produto_venda = produto_vendas.get(position);
 
         TextView textIdProdutoVenda = (TextView) mView.findViewById(R.id.textIdProdutoVenda);
-        TextView textValorUnitario = (TextView) mView.findViewById(R.id.textValorUnitarioVenda);
-        TextView textQuantidadeProduto = (TextView) mView.findViewById(R.id.textQuantidadeProdutoVenda);
+        TextView textValorUnitario = (TextView) mView.findViewById(R.id.editValorUnitarioProduto_Venda);
+        TextView textQuantidadeProduto = (TextView) mView.findViewById(R.id.editQuantidadeProduto);
         TextView textIdProduto = (TextView) mView.findViewById(R.id.textIdProduto);
         TextView textIdVenda = (TextView) mView.findViewById(R.id.textIdVenda);
 

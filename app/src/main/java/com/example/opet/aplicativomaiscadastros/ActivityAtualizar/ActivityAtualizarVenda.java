@@ -16,8 +16,6 @@ import com.example.opet.aplicativomaiscadastros.DAO.ProdutoDAO;
 import com.example.opet.aplicativomaiscadastros.DAO.VendaDAO;
 import com.example.opet.aplicativomaiscadastros.MainActivity;
 import com.example.opet.aplicativomaiscadastros.Model.Cliente;
-import com.example.opet.aplicativomaiscadastros.Model.Fornecedor;
-import com.example.opet.aplicativomaiscadastros.Model.Marca;
 import com.example.opet.aplicativomaiscadastros.Model.Produto;
 import com.example.opet.aplicativomaiscadastros.Model.Setor;
 import com.example.opet.aplicativomaiscadastros.Model.Venda;
@@ -117,4 +115,4 @@ public class ActivityAtualizarVenda extends Activity {
         Intent telaInicial = new Intent(ActivityAtualizarVenda.this,MainActivity.class);
         startActivity(telaInicial);
         finish();
-    }
+    }}
