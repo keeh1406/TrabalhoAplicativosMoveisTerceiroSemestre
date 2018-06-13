@@ -57,8 +57,8 @@ public class ActivityCadastrarCliente extends Activity {
         cliente.setNascimentoCliente(simpleDateFormat.parse(editNascimentoCliente.getText().toString()));
         cliente.setCPFCliente(Long.parseLong(editCPFCliente.getText().toString()));
         cliente.setEnderecoCliente(editEnderecoCliente.getText().toString());
-        cliente.setEnderecoCliente(editTelefoneCliente.getText().toString());
-        cliente.setSexoCliente((SpinnerSexoCliente.toString()));
+        cliente.setTelefoneCliente(Long.parseLong(editTelefoneCliente.getText().toString()));
+        cliente.setSexoCliente(SpinnerSexoCliente.toString());
 
         long resultado = clienteDAO.insereDado(cliente);
 

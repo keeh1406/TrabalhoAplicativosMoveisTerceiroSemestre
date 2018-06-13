@@ -16,6 +16,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ActivityAtualizar.ActivityAtualizarCliente"></activity>
+        <activity android:name=".ActivityAtualizar.ActivityAtualizarFuncionario"></activity>
+        <activity android:name=".ActivityAtualizar.ActivityAtualizarFornecedor"></activity>
+        <activity android:name=".ActivityAtualizar.ActivityAtualizarLoja"></activity>
+        <activity android:name=".ActivityAtualizar.ActivityAtualizarMarca"></activity>
+        <activity android:name=".ActivityAtualizar.ActivityAtualizarSetor"></activity>
+        <activity android:name=".ActivityAtualizar.ActivityAtualizarProduto"></activity>
+        <activity android:name=".ActivityAtualizar.ActivityAtualizarProduto_Venda"></activity>
+        <activity android:name=".ActivityAtualizar.ActivityAtualizarVenda"></activity>
+
+        <activity android:name=".ActivityCadastrar.ActivityCadastrarCliente"></activity>
+        <activity android:name=".ActivityCadastrar.ActivityCadastrarFuncionario"></activity>
+        <activity android:name=".ActivityCadastrar.ActivityCadastrarFornecedor"></activity>
+        <activity android:name=".ActivityCadastrar.ActivityCadastrarLoja"></activity>
+        <activity android:name=".ActivityCadastrar.ActivityCadastrarMarca"></activity>
+        <activity android:name=".ActivityCadastrar.ActivityCadastrarSetor"></activity>
+        <activity android:name=".ActivityCadastrar.ActivityCadastrarProduto"></activity>
+        <activity android:name=".ActivityCadastrar.ActivityCadastrarProduto_Venda"></activity>
+        <activity android:name=".ActivityCadastrar.ActivityCadastrarVenda"></activity>
+
+        <activity android:name=".ActivityListar.ActivityListarClientes"></activity>
+        <activity android:name=".ActivityListar.ActivityListarFuncionarios"></activity>
+        <activity android:name=".ActivityListar.ActivityListarFornecedores"></activity>
+        <activity android:name=".ActivityListar.ActivityListarLojas"></activity>
+        <activity android:name=".ActivityListar.ActivityListarMarcas"></activity>
+        <activity android:name=".ActivityListar.ActivityListarProdutos"></activity>
+        <activity android:name=".ActivityListar.ActivityListarProduto_Venda"></activity>
+        <activity android:name=".ActivityListar.ActivityListarSetores"></activity>
+        <activity android:name=".ActivityListar.ActivityListarVendas"></activity>
     </application>
 
 </manifest>
