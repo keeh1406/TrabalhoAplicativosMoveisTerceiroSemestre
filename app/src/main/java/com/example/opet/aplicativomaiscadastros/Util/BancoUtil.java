@@ -80,5 +80,5 @@ public class BancoUtil {
     public static final String VENDA_CLIENTE = "id_Cliente";
 
 
-    public static final int VERSAO = 4;
+    public static final int VERSAO = 5;
 }

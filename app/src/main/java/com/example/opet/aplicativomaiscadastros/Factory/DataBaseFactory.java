@@ -58,7 +58,8 @@ public class DataBaseFactory extends SQLiteOpenHelper {
                 + BancoUtil.TELEFONE_FUNCIONARIO + " text,"
                 + BancoUtil.SEXO_FUNCIONARIO + " text,"
                 + BancoUtil.SENHA_FUNCIONARIO + " text,"
-                + BancoUtil.FL_GERENTE + " text"
+                + BancoUtil.FL_GERENTE + " text, "
+                + BancoUtil.FUNCIONARIO_LOJA + " text "
                 + ")";
         db.execSQL(sql);
 

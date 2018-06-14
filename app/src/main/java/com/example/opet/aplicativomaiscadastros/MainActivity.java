@@ -2,11 +2,9 @@ package com.example.opet.aplicativomaiscadastros;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
 import com.example.opet.aplicativomaiscadastros.ActivityCadastrar.ActivityCadastrarCliente;
 import com.example.opet.aplicativomaiscadastros.ActivityCadastrar.ActivityCadastrarFornecedor;
 import com.example.opet.aplicativomaiscadastros.ActivityCadastrar.ActivityCadastrarFuncionario;
@@ -27,11 +25,9 @@ import com.example.opet.aplicativomaiscadastros.ActivityLogin.LoginActivity;
 import com.example.opet.aplicativomaiscadastros.DAO.FuncionarioDAO;
 import com.example.opet.aplicativomaiscadastros.Model.Funcionario;
 
-import java.text.ParseException;
-
 public class MainActivity extends Activity {
 
-    private Funcionario usuarioLogado;
+    private static Funcionario usuarioLogado;
     private TextView textWelcome;
 
     @Override
@@ -42,13 +38,9 @@ public class MainActivity extends Activity {
         textWelcome = (TextView) findViewById(R.id.textWelcome);
 
         Intent resultado = getIntent();
-        long id = resultado.getLongExtra("ID_FUNCIONARIO",0);
+        int id = resultado.getIntExtra("ID_FUNCIONARIO",0);
         if(usuarioLogado == null)
-            try {
-                usuarioLogado = new FuncionarioDAO(this).carregaFuncionarioPorID(id);
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+            usuarioLogado = new FuncionarioDAO(this).carregaFuncionarioPorIDLogin(id);
 
         textWelcome.setText("Olá! " + usuarioLogado.getEmailFuncionario());
     }

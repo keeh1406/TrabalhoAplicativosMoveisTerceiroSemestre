@@ -30,11 +30,11 @@ public class LoginActivity extends Activity {
         }
 
     public void logarUsuario(View v){
-        String login = editEmail.getText().toString();
+        String email = editEmail.getText().toString();
         String senha = editSenha.getText().toString();
 
         FuncionarioDAO funcionarioDAO = new FuncionarioDAO(this);
-        long idUsuario = funcionarioDAO.validaUsuario(login, Util.toMD5(senha));
+        long idUsuario = funcionarioDAO.validaUsuario(email, Util.toMD5(senha));
         if(idUsuario > 0){
             Toast.makeText(this, "Funcionário Logado com Sucesso!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(LoginActivity.this,MainActivity.class);

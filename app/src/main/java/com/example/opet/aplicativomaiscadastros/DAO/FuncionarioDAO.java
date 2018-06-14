@@ -100,6 +100,32 @@ public class FuncionarioDAO {
         return funcionario;
     }
 
+    public Funcionario carregaFuncionarioPorIDLogin(int id){
+        Cursor cursor;
+        String[] campos = {BancoUtil.ID_FUNCIONARIO, BancoUtil.EMAIL_FUNCIONARIO, BancoUtil.SENHA_FUNCIONARIO};
+        db = banco.getReadableDatabase();
+
+        String where = BancoUtil.ID_FUNCIONARIO + " = " + id;
+
+        cursor = db.query(BancoUtil.TABELA_FUNCIONARIO, campos, where, null, null, null, null, null);
+
+        Funcionario funcionario = new Funcionario();
+        if (cursor != null) {
+            cursor.moveToFirst();
+
+            int ID = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.ID_FUNCIONARIO));
+            String email = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.EMAIL_FUNCIONARIO));
+            String senha = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.SENHA_FUNCIONARIO));
+
+            funcionario.setIdFuncionario(ID);
+            funcionario.setEmailFuncionario(email);
+            funcionario.setSenhaFuncionario(senha);
+
+        }
+        db.close();
+        return funcionario;
+    }
+
     public Cursor carregaDados() {
         Cursor cursor;
         String[] campos = {BancoUtil.ID_FUNCIONARIO, BancoUtil.NOME_FUNCIONARIO, BancoUtil.CPF_FUNCIONARIO,
