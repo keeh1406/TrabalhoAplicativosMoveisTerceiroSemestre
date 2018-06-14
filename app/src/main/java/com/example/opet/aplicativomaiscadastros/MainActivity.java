@@ -23,9 +23,15 @@ import com.example.opet.aplicativomaiscadastros.ActivityListar.ActivityListarMar
 import com.example.opet.aplicativomaiscadastros.ActivityListar.ActivityListarProdutos;
 import com.example.opet.aplicativomaiscadastros.ActivityListar.ActivityListarSetores;
 import com.example.opet.aplicativomaiscadastros.ActivityListar.ActivityListarVendas;
+import com.example.opet.aplicativomaiscadastros.ActivityLogin.LoginActivity;
+import com.example.opet.aplicativomaiscadastros.DAO.FuncionarioDAO;
+import com.example.opet.aplicativomaiscadastros.Model.Funcionario;
+
+import java.text.ParseException;
 
 public class MainActivity extends Activity {
 
+    private Funcionario usuarioLogado;
     private TextView textWelcome;
 
     @Override
@@ -36,8 +42,15 @@ public class MainActivity extends Activity {
         textWelcome = (TextView) findViewById(R.id.textWelcome);
 
         Intent resultado = getIntent();
+        long id = resultado.getLongExtra("ID_FUNCIONARIO",0);
+        if(usuarioLogado == null)
+            try {
+                usuarioLogado = new FuncionarioDAO(this).carregaFuncionarioPorID(id);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
 
-        textWelcome.setText("Olá!");
+        textWelcome.setText("Olá! " + usuarioLogado.getEmailFuncionario());
     }
 
     public void carregaItemMenu(View v){
@@ -91,6 +104,12 @@ public class MainActivity extends Activity {
                 carregarIntent(ActivityListarVendas.class);
                 break;
         }
+    }
+
+    public void deslogar(View v){
+        usuarioLogado = null;
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
     }
 
     private void carregarIntent(Class classe){

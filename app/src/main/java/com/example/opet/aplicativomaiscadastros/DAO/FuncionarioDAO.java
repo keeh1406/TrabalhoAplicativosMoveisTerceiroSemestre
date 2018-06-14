@@ -212,4 +212,23 @@ public class FuncionarioDAO {
         else
             return false;
     }
+
+    public long validaUsuario(String email, String senha){
+        Cursor cursor;
+        String[] campos = {BancoUtil.ID_FUNCIONARIO, BancoUtil.EMAIL_FUNCIONARIO, BancoUtil.SENHA_FUNCIONARIO};
+        db = banco.getReadableDatabase();
+
+        String where = BancoUtil.EMAIL_FUNCIONARIO + " = " + "'" + email + "'";
+        where += " and " + BancoUtil.SENHA_FUNCIONARIO + " = " + "'" + senha + "'";
+
+        cursor = db.query(BancoUtil.TABELA_FUNCIONARIO, campos, where, null, null, null, null, null);
+
+        cursor.moveToFirst();
+
+        db.close();
+
+        if(cursor.getCount() > 0)
+            return cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.ID_FUNCIONARIO));
+        return -1;
+    }
 }
