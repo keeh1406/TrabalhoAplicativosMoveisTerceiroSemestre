@@ -28,6 +28,10 @@ public class ClienteDAO {
         banco = new DataBaseFactory(context);
     }
 
+    public ClienteDAO() {
+
+    }
+
     public long insereDado(Cliente cliente) {
         ContentValues valores;
         long resultado;
