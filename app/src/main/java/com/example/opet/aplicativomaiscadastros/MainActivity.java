@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
         if(usuarioLogado == null)
             usuarioLogado = new FuncionarioDAO(this).carregaFuncionarioPorIDLogin(id);
 
-        textWelcome.setText("Olá! " + usuarioLogado.getEmailFuncionario());
+        textWelcome.setText("Olá! " + usuarioLogado.getNomeFuncionario());
     }
 
     public void carregaItemMenu(View v){
