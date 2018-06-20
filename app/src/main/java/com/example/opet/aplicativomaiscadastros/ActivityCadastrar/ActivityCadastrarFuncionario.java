@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -56,19 +57,25 @@ public class ActivityCadastrarFuncionario extends Activity {
         spinnerSexoFuncionario = (Spinner) findViewById(R.id.spinnerSexoFuncionario);
 
         spinnerIdLojaFuncionario = findViewById(R.id.spinnerIdLojaFuncionario);
-        List<Loja> lojas = new ArrayList<>();
-        final LojaAdapter lojaAdapter = new LojaAdapter(this,android.R.layout.simple_spinner_item,lojas);
+            List<Loja> lojas = new ArrayList<>();
+            LojaDAO lojaDAO = new LojaDAO(this);
+            lojas = lojaDAO.carregaDadosLista();
+            ArrayList<String> lojaNome = new ArrayList<>();
+            for(Loja loja : lojas){
+                lojaNome.add(loja.getNomeLoja());
+            }
+            final ArrayAdapter<String> lojaAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,lojaNome);
         spinnerIdLojaFuncionario.setAdapter(lojaAdapter);
         spinnerIdLojaFuncionario.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                loja = (Loja) lojaAdapter.getItem(i);
-            }
+                @Override
+                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+                }
 
-            }
+                @Override
+                public void onNothingSelected(AdapterView<?> adapterView) {
+
+                }
         });
 
     }
@@ -86,7 +93,7 @@ public class ActivityCadastrarFuncionario extends Activity {
         funcionario.setEnderecoFuncionario(editTelefoneFuncionario.getText().toString());
         funcionario.setFlGerente(checkboxFlGerenteFuncionario.getText().toString());
         funcionario.setSexoFuncionario((spinnerSexoFuncionario.toString()));
-        funcionario.setId_Loja(loja.getIdLoja());
+        funcionario.setId_Loja(Integer.parseInt(spinnerIdLojaFuncionario.toString()));
 
         long resultado = funcionarioDAO.insereDado(funcionario);
 

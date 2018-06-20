@@ -37,7 +37,6 @@ public class FornecedorDAO {
         valores = new ContentValues();
         valores.put(BancoUtil.NOME_FORNECEDOR, fornecedor.getNomeFornecedor());
         valores.put(BancoUtil.CNPJ_FORNECEDOR, fornecedor.getCNPJ());
-        valores.put(BancoUtil.TELEFONE_lOJA, fornecedor.getTelefoneFornecedor());
 
         resultado = db.insert(BancoUtil.TABELA_FORNECEDOR, null, valores);
         db.close();
@@ -48,8 +47,7 @@ public class FornecedorDAO {
 
     public Fornecedor carregaFornecedorPorID(long id) throws ParseException {
         Cursor cursor;
-        String[] campos = {BancoUtil.ID_FORNECEDOR, BancoUtil.NOME_FORNECEDOR, BancoUtil.CNPJ_FORNECEDOR,
-                BancoUtil.TELEFONE_lOJA};
+        String[] campos = {BancoUtil.ID_FORNECEDOR, BancoUtil.NOME_FORNECEDOR, BancoUtil.CNPJ_FORNECEDOR};
         db = banco.getReadableDatabase();
 
         String where = BancoUtil.ID_FORNECEDOR + " = " + id;
@@ -64,12 +62,10 @@ public class FornecedorDAO {
             int idFornecedor = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.ID_FORNECEDOR));
             String nomeFornecedor = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.NOME_FORNECEDOR));
             long cpfFornecedor = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.CNPJ_FORNECEDOR));
-            long telefoneFornecedor = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.TELEFONE_lOJA));;
 
             fornecedor.setIdFornecedor(idFornecedor);
             fornecedor.setNomeFornecedor(nomeFornecedor);
             fornecedor.setCNPJ(cpfFornecedor);
-            fornecedor.setTelefoneFornecedor(telefoneFornecedor);
 
         }
         db.close();
@@ -78,8 +74,7 @@ public class FornecedorDAO {
 
     public Cursor carregaDados() {
         Cursor cursor;
-        String[] campos = {BancoUtil.ID_FORNECEDOR, BancoUtil.NOME_FORNECEDOR, BancoUtil.CNPJ_FORNECEDOR,
-             BancoUtil.TELEFONE_lOJA};
+        String[] campos = {BancoUtil.ID_FORNECEDOR, BancoUtil.NOME_FORNECEDOR, BancoUtil.CNPJ_FORNECEDOR};
         db = banco.getReadableDatabase();
 
         String where = null;
@@ -106,12 +101,10 @@ public class FornecedorDAO {
                     int idFornecedor = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.ID_FORNECEDOR));
                     String nomeFornecedor = cursor.getString(cursor.getColumnIndexOrThrow(BancoUtil.NOME_FORNECEDOR));
                     long cpfFornecedor = cursor.getLong(cursor.getColumnIndexOrThrow(BancoUtil.CNPJ_FORNECEDOR));
-                    long telefoneFornecedor = cursor.getInt(cursor.getColumnIndexOrThrow(BancoUtil.TELEFONE_lOJA));
 
                     fornecedor.setIdFornecedor(idFornecedor);
                     fornecedor.setNomeFornecedor(nomeFornecedor);
                     fornecedor.setCNPJ(cpfFornecedor);
-                    fornecedor.setTelefoneFornecedor(telefoneFornecedor);
 
                     fornecedores.add(fornecedor);
                 } while (cursor.moveToNext());
@@ -140,13 +133,11 @@ public class FornecedorDAO {
         where = BancoUtil.ID_FORNECEDOR + " = " + fornecedor.getIdFornecedor();
         where = BancoUtil.NOME_FORNECEDOR + " = " + fornecedor.getNomeFornecedor();
         where = BancoUtil.CNPJ_FORNECEDOR + " = " + fornecedor.getCNPJ();
-        where = BancoUtil.TELEFONE_lOJA + " = " + fornecedor.getTelefoneFornecedor();
 
 
         valores = new ContentValues();
         valores.put(BancoUtil.NOME_FORNECEDOR, fornecedor.getNomeFornecedor());
         valores.put(BancoUtil.CNPJ_FORNECEDOR, fornecedor.getCNPJ());
-        valores.put(BancoUtil.TELEFONE_lOJA, fornecedor.getTelefoneFornecedor());
 
 
         int resultado = db.update(BancoUtil.TABELA_FORNECEDOR, valores, where, null);

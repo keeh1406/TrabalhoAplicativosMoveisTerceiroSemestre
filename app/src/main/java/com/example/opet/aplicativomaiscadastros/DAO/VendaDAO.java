@@ -92,7 +92,7 @@ public class VendaDAO {
 
     public Cursor carregaDados() {
         Cursor cursor;
-        String[] campos = {BancoUtil.ID_VENDA, BancoUtil.QUANTIDADE_PRODUTO, BancoUtil.DESCRICAO_VENDA,
+        String[] campos = {BancoUtil.ID_VENDA, BancoUtil.DESCRICAO_VENDA,
                 BancoUtil.DATA_VENDA, BancoUtil.VALOR_TOTAL_VENDA, BancoUtil.FORMA_PAGAMENTO_VENDA, BancoUtil.FECHADO, BancoUtil.VENDA_PRODUTO, BancoUtil.VENDA_CLIENTE};
         db = banco.getReadableDatabase();
 

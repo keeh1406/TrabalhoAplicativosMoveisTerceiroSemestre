@@ -21,13 +21,8 @@ import com.example.opet.aplicativomaiscadastros.ActivityListar.ActivityListarMar
 import com.example.opet.aplicativomaiscadastros.ActivityListar.ActivityListarProdutos;
 import com.example.opet.aplicativomaiscadastros.ActivityListar.ActivityListarSetores;
 import com.example.opet.aplicativomaiscadastros.ActivityListar.ActivityListarVendas;
-import com.example.opet.aplicativomaiscadastros.ActivityLogin.LoginActivity;
-import com.example.opet.aplicativomaiscadastros.DAO.FuncionarioDAO;
-import com.example.opet.aplicativomaiscadastros.Model.Funcionario;
 
 public class MainActivity extends Activity {
-
-    private static Funcionario usuarioLogado;
     private TextView textWelcome;
 
     @Override
@@ -36,13 +31,6 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         textWelcome = (TextView) findViewById(R.id.textWelcome);
-
-        Intent resultado = getIntent();
-        int id = resultado.getIntExtra("ID_FUNCIONARIO",0);
-        if(usuarioLogado == null)
-            usuarioLogado = new FuncionarioDAO(this).carregaFuncionarioPorIDLogin(id);
-
-        textWelcome.setText("Olá! " + usuarioLogado.getNomeFuncionario());
     }
 
     public void carregaItemMenu(View v){
@@ -96,12 +84,6 @@ public class MainActivity extends Activity {
                 carregarIntent(ActivityListarVendas.class);
                 break;
         }
-    }
-
-    public void deslogar(View v){
-        usuarioLogado = null;
-        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-        startActivity(intent);
     }
 
     private void carregarIntent(Class classe){
